@@ -2,14 +2,22 @@
 using System.Collections;
 public class MovePlayerScript : MonoBehaviour
 {
+    [SerializeField]
+    private Camera _player1Camera;
+    [SerializeField]
+    private Camera _player2Camera;
+    [SerializeField]
+    private Camera _player3Camera;
+    [SerializeField]
+    private Camera _player4Camera;
+
     int amountOfPlayers = 0;
     int gameState = 0;
     Vector3[] spawnPos = new Vector3[4];
     Color[] playerColor = new Color[4];
     GameObject player1;
     GameObject player2;
-    public Camera player1Cam;
-    public Camera player2Cam;
+
     void Start()
     {
         spawnPos[0] = new Vector3(-12, 16.167f, -0.5f);
@@ -62,7 +70,6 @@ public class MovePlayerScript : MonoBehaviour
         }
         if(gameState == 1)
         {
-            player1Cam.transform.position = 
             //bewegen = true;
         }
     }
