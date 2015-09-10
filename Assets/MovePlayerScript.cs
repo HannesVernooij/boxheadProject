@@ -15,8 +15,8 @@ public class MovePlayerScript : MonoBehaviour
     int gameState = 0;
     Vector3[] spawnPos = new Vector3[4];
     Color[] playerColor = new Color[4];
-    GameObject player1;
-    GameObject player2;
+
+    public GameObject[] players = new GameObject[4];
 
     void Start()
     {
@@ -33,7 +33,17 @@ public class MovePlayerScript : MonoBehaviour
 
     void Update()
     {
-
+        switch (gameState)
+        {
+            case 1:
+                Player1Movement();
+                Player2Movement();
+                if (players[2] != null)
+                    Player3Movement();
+                if (players[3] != null)
+                    Player4Movement();
+                break;
+        }
     }
 
     void OnGUI()
@@ -55,22 +65,55 @@ public class MovePlayerScript : MonoBehaviour
                 amountOfPlayers = 4;
             }
         }
-        else if(gameState == 0)
+        else if (gameState == 0)
         {
             GameObject temp;
-            for(int i = 0; i < amountOfPlayers; i++)
+            for (int i = 0; i < amountOfPlayers; i++)
             {
                 temp = GameObject.CreatePrimitive(PrimitiveType.Cube);
                 temp.transform.position = spawnPos[i];
                 temp.name = "Player " + (i + 1);
-                
+                players[i] = temp;
                 temp.GetComponent<Renderer>().material.color = playerColor[i];
             }
             gameState = 1;
         }
-        if(gameState == 1)
+        if (gameState == 1)
         {
-            //bewegen = true;
+
         }
+    }
+
+    private void Player1Movement()
+    {
+        float playerH = Input.GetAxis("Player0_Horizontal");
+        float playerV = Input.GetAxis("Player0_Vertical");
+
+        float playerH2 = Input.GetAxis("Player0_Horizontal2");
+        float playerV2 = Input.GetAxis("Player0_Vertical2");
+        print(playerH2 + playerV2);
+
+        players[0].transform.Translate(new Vector3(playerV, playerH));
+    }
+
+    private void Player2Movement()
+    {
+        float playerH = Input.GetAxis("Player1_Horizontal");
+        float playerV = Input.GetAxis("Player1_Vertical");
+        players[1].transform.Translate(new Vector3(playerV, playerH));
+    }
+
+    private void Player3Movement()
+    {
+        float playerH = Input.GetAxis("Player2_Horizontal");
+        float playerV = Input.GetAxis("Player2_Vertical");
+        players[2].transform.Translate(new Vector3(playerV, playerH));
+    }
+
+    private void Player4Movement()
+    {
+        float playerH = Input.GetAxis("Player3_Horizontal");
+        float playerV = Input.GetAxis("Player3_Vertical");
+        players[3].transform.Translate(new Vector3(playerV, playerH));
     }
 }
