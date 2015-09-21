@@ -67,6 +67,7 @@
     <Compile Include="Assets\BulletScript.cs" />
     <Compile Include="Assets\MovePlayerScript.cs" />
     <Compile Include="Assets\StartScript.cs" />
+    <Compile Include="Assets\temPAI.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

@@ -12,6 +12,7 @@ public class StartScript : MonoBehaviour
     private int _gamestate = 0;
     private Vector3[] _spawnPos = new Vector3[4];
     private Color[] _playerColor = new Color[4];
+    [SerializeField]
     private GameObject[] _players = new GameObject[4];
 
     void Start()
@@ -26,6 +27,15 @@ public class StartScript : MonoBehaviour
         _playerColor[3] = Color.yellow;
     }
 
+    void Update()
+    {
+        for(int i = 0; i < _amountOfPlayers; i ++)
+        {
+            _playerCameras[i].transform.position = new Vector3(_players[i].transform.position.x, _playerCameras[i].transform.position.y, _players[i].transform.position.z);
+            _playerCameras[i].transform.LookAt(_players[i].transform);
+        }
+    }
+
     void OnGUI()
     {
         if (_amountOfPlayers == 0)
@@ -37,6 +47,8 @@ public class StartScript : MonoBehaviour
                 _playerCameras[1].rect = new Rect(0.51f, 0, 0.49f, 1);
                 _playerCameras[2].enabled = false;
                 _playerCameras[3].enabled = false;
+                _players[0].SetActive(true);
+                _players[1].SetActive(true);
             }
 
             if (GUI.Button(new Rect(10, 40, 100, 30), "3 players"))
@@ -46,6 +58,9 @@ public class StartScript : MonoBehaviour
                 _playerCameras[1].rect = new Rect(0.51f, 0.51f,     0.49f, 0.49f);
                 _playerCameras[2].rect = new Rect(0,     0,         1,     0.49f);
                 _playerCameras[3].enabled = false;
+                _players[0].SetActive(true);
+                _players[1].SetActive(true);
+                _players[2].SetActive(true);
             }
 
             if (GUI.Button(new Rect(10, 70, 100, 30), "4 players"))
@@ -55,10 +70,14 @@ public class StartScript : MonoBehaviour
                 _playerCameras[1].rect = new Rect(0.51f, 0.51f, 0.49f, 0.49f);
                 _playerCameras[2].rect = new Rect(0,     0,     0.49f, 0.49f);
                 _playerCameras[3].rect = new Rect(0.51f, 0,     0.49f, 0.49f);
+                _players[0].SetActive(true);
+                _players[1].SetActive(true);
+                _players[2].SetActive(true);
+                _players[3].SetActive(true);
             }
         }
         else if (_gamestate == 0)
-        {
+        {/*
             GameObject temp;
             for (int i = 0; i < _amountOfPlayers; i++)
             {
@@ -67,7 +86,7 @@ public class StartScript : MonoBehaviour
                 temp.name = "Player " + (i + 1);
                 _players[i] = temp;
                 temp.GetComponent<Renderer>().material.color = _playerColor[i];
-            }
+            }*/
             _gamestate = 1;
         }
         if (_gamestate == 1)

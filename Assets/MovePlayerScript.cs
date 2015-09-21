@@ -6,10 +6,15 @@ public class MovePlayerScript : MonoBehaviour
     private GameObject[] _players = new GameObject[4];
     private int _amountOfPlayers = 0;
     private int _gamestate = 0;
+    GameObject LookAtGameObject;
+    GameObject LookAtGameObject1;
+    GameObject LookAtGameObject2;
+    GameObject LookAtGameObject3;
 
     public GameObject[] Players
     {
         set { _players = value; }
+
     }
     public int AmountOfPlayers
     {
@@ -25,9 +30,15 @@ public class MovePlayerScript : MonoBehaviour
     }
 
 
+    void Start()
+    {
+        LookAtGameObject = GameObject.FindGameObjectWithTag("LookAtCube");
+        LookAtGameObject1 = GameObject.FindGameObjectWithTag("LookAtCube1");
+        LookAtGameObject2 = GameObject.FindGameObjectWithTag("LookAtCube2");
+        LookAtGameObject3 = GameObject.FindGameObjectWithTag("LookAtCube3");
+    }
 
-
-    void Update()
+    void FixedUpdate()
     {
         switch (_gamestate)
         {
@@ -42,6 +53,9 @@ public class MovePlayerScript : MonoBehaviour
         }
     }
 
+
+
+
     private void Player1Movement()
     {
         float playerH = Input.GetAxis("Player0_Horizontal");
@@ -49,29 +63,68 @@ public class MovePlayerScript : MonoBehaviour
 
         float playerH2 = Input.GetAxis("Player0_Horizontal2");
         float playerV2 = Input.GetAxis("Player0_Vertical2");
-        print(playerH2 + playerV2);
 
-        _players[0].transform.Translate(new Vector3(playerV, playerH));
+
+        LookAtGameObject.transform.position = new Vector3(_players[0].transform.position.x + playerH2 * 2, _players[0].transform.position.y, _players[0].transform.position.z + -playerV2 * 2);
+
+        _players[0].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6),Space.World);
+        _players[0].transform.LookAt(LookAtGameObject.transform);
+
+        playerH = 0;
+        playerV = 0;
     }
 
     private void Player2Movement()
     {
         float playerH = Input.GetAxis("Player1_Horizontal");
         float playerV = Input.GetAxis("Player1_Vertical");
-        _players[1].transform.Translate(new Vector3(playerV, playerH));
+
+        float playerH2 = Input.GetAxis("Player1_Horizontal2");
+        float playerV2 = Input.GetAxis("Player1_Vertical2");
+
+
+        LookAtGameObject1.transform.position = new Vector3(_players[1].transform.position.x + playerH2 * 2, _players[1].transform.position.y, _players[1].transform.position.z + -playerV2 * 2);
+
+        _players[1].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
+        _players[1].transform.LookAt(LookAtGameObject1.transform);
+
+        playerH = 0;
+        playerV = 0;
     }
 
     private void Player3Movement()
     {
         float playerH = Input.GetAxis("Player2_Horizontal");
         float playerV = Input.GetAxis("Player2_Vertical");
-        _players[2].transform.Translate(new Vector3(playerV, playerH));
+
+        float playerH2 = Input.GetAxis("Player2_Horizontal2");
+        float playerV2 = Input.GetAxis("Player2_Vertical2");
+
+
+        LookAtGameObject2.transform.position = new Vector3(_players[2].transform.position.x + playerH2 * 2, _players[2].transform.position.y, _players[2].transform.position.z + -playerV2 * 2);
+
+        _players[2].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
+        _players[2].transform.LookAt(LookAtGameObject2.transform);
+
+        playerH = 0;
+        playerV = 0;
     }
 
     private void Player4Movement()
     {
         float playerH = Input.GetAxis("Player3_Horizontal");
         float playerV = Input.GetAxis("Player3_Vertical");
-        _players[3].transform.Translate(new Vector3(playerV, playerH));
+
+        float playerH2 = Input.GetAxis("Player3_Horizontal2");
+        float playerV2 = Input.GetAxis("Player3_Vertical2");
+
+
+        LookAtGameObject3.transform.position = new Vector3(_players[3].transform.position.x + playerH2 * 2, _players[3].transform.position.y, _players[3].transform.position.z + -playerV2 * 2);
+
+        _players[3].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
+        _players[3].transform.LookAt(LookAtGameObject3.transform);
+
+        playerH = 0;
+        playerV = 0;
     }
 }
