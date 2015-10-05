@@ -7,6 +7,9 @@ public interface IShootBehaviour
     void Shoot(GameObject gunPivotObject, BulletPool bulletPool, GameObject thisObject);
     void CalculateAmmo();
     void SetAmmo(int value);
+    int FullClips();
+
+    int AmmoInClip();
 }
 
 public class Pistol : IShootBehaviour
@@ -19,6 +22,15 @@ public class Pistol : IShootBehaviour
     private int _bulletSpeed = 50;
     private float bulletDamage = 0.25f;
     private BulletPool _bulletPool;
+
+    public int FullClips()
+    {
+        return _amountOfFullClips;
+    }
+    public int AmmoInClip()
+    {
+        return _ammoInClip;
+    }
 
     public void SetBulletPool(BulletPool bulletPool)
     {
@@ -55,14 +67,23 @@ public class Pistol : IShootBehaviour
 
 public class Shotgun : IShootBehaviour
 {
-    private int _ammo;
-    private int _ammoInClip;
+    public int _ammo;
+    public int _ammoInClip;
     private int _amountOfFullClips;
     private int _clipSize = 6;
     private float _shootDelay = 0.2f;
     private int _bulletSpeed = 50;
     private float bulletDamage = 0.25f;
     private BulletPool _bulletPool;
+
+    public int FullClips()
+    {
+        return _amountOfFullClips;
+    }
+    public int AmmoInClip()
+    {
+        return _ammoInClip;
+    }
 
     public void SetBulletPool(BulletPool bulletPool)
     {
@@ -99,14 +120,23 @@ public class Shotgun : IShootBehaviour
 
 public class Sniper : IShootBehaviour
 {
-    private int _ammo;
-    private int _ammoInClip;
+    public int _ammo;
+    public int _ammoInClip;
     private int _amountOfFullClips;
     private int _clipSize = 6;
     private float _shootDelay = 0.2f;
     private int _bulletSpeed = 50;
     private float bulletDamage = 0.25f;
     private BulletPool _bulletPool;
+
+    public int FullClips()
+    {
+        return _amountOfFullClips;
+    }
+    public int AmmoInClip()
+    {
+        return _ammoInClip;
+    }
 
     public void SetBulletPool(BulletPool bulletPool)
     {
@@ -144,14 +174,22 @@ public class Sniper : IShootBehaviour
 
 public class Smg : IShootBehaviour
 {
-    private int _ammo;
-    private int _ammoInClip;
+    public int _ammo;
+    public int _ammoInClip;
     private int _amountOfFullClips;
     private int _clipSize = 6;
     private float _shootDelay = 0.2f;
     private int _bulletSpeed = 50;
     private float bulletDamage = 0.25f;
     private BulletPool _bulletPool;
+    public int FullClips()
+    {
+        return _amountOfFullClips;
+    }
+    public int AmmoInClip()
+    {
+        return _ammoInClip;
+    }
 
     public void SetBulletPool(BulletPool bulletPool)
     {
@@ -192,6 +230,7 @@ public class Gun : MonoBehaviour
     BulletPool _bulletPool;
     private bool _allowedToShoot = false;
     IShootBehaviour _shootBehaviour;
+    int[] _ammo = new int[2];
 
     public bool AllowedToShoot
     {
@@ -220,5 +259,14 @@ public class Gun : MonoBehaviour
     public void SetAmmo(int value)
     {
         _shootBehaviour.SetAmmo(value);
+    }
+
+    public int FullClips()
+    {
+        return _shootBehaviour.FullClips();
+    }
+    public int AmmoInClip()
+    {
+        return _shootBehaviour.AmmoInClip();
     }
 }
