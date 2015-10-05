@@ -5,7 +5,7 @@ public class MovePlayerScript : MonoBehaviour
 {
     private Camera[] _playerCameras;
     private GameObject[] _players = new GameObject[4];
-    private Gun[,] _currentPlayerGuns = new Gun[4, 2];
+    private Gun[,] _currentPlayerGuns = new Gun[4, 4];
     private Gun[] _selectedGun = new Gun[4];
     private GameObject[][] _gunSlots = new GameObject[][]
         {

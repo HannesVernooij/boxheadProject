@@ -37,7 +37,7 @@ public class StartScript : MonoBehaviour
             temp.transform.localPosition = Vector3.zero;
             Gun gunComponent = new Gun();
             gunComponent.ShootBehaviour = new Pistol();
-
+            _movePlayerScript.GetGun(_players[i], gunComponent, 50);
         }
     }
 
