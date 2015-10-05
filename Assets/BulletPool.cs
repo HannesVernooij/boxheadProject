@@ -20,7 +20,7 @@ public class BulletPool : MonoBehaviour
         }
     }
     
-    public void UseBullet(Vector3 startPosition, Quaternion rotation, GameObject fromObject)
+    public void UseBullet(Vector3 startPosition, GameObject fromObject, int bulletSpeed, string bullletName)
     {
         for(int i = 0; i < _bulletPool.Length; i++)
         {
@@ -28,6 +28,8 @@ public class BulletPool : MonoBehaviour
             {
                 _bulletPool[i].transform.position = startPosition;
                 _bulletPool[i].transform.rotation = fromObject.transform.rotation;
+                _bulletPool[i].name = bullletName;
+                _bulletPool[i].GetComponent<BulletScript>().BuletSpeed = bulletSpeed;
                 _bulletPool[i].SetActive(true);
                 break;
             }

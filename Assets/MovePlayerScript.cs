@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 public class MovePlayerScript : MonoBehaviour
 {
     private Camera[] _playerCameras;
     private GameObject[] _players = new GameObject[4];
+    private Gun[,] _currentPlayerGuns = new Gun[4, 2];
+    private Gun[] _selectedGun = new Gun[4];
     private GameObject[][] _gunSlots = new GameObject[][]
         {
         new GameObject[2],
@@ -70,8 +73,14 @@ public class MovePlayerScript : MonoBehaviour
 
         _players[0].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
         _players[0].transform.LookAt(LookAtGameObject.transform);
-
-
+        if (Input.GetButton("ShootPlayer1"))
+        {
+            _selectedGun[0].AllowedToShoot = true;
+        }
+        else if (Input.GetButtonUp("ShootPlayer1"))
+        {
+            _selectedGun[0].AllowedToShoot = false;
+        }
     }
 
     private void Player2Movement(float playerH = 0, float playerV = 0, float playerH2 = 0, float playerV2 = 0)
@@ -80,7 +89,14 @@ public class MovePlayerScript : MonoBehaviour
 
         _players[1].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
         _players[1].transform.LookAt(LookAtGameObject1.transform);
-
+        if (Input.GetButton("ShootPlayer1"))
+        {
+            _selectedGun[1].AllowedToShoot = true;
+        }
+        else if (Input.GetButtonUp("ShootPlayer1"))
+        {
+            _selectedGun[1].AllowedToShoot = false;
+        }
     }
 
     private void Player3Movement(float playerH = 0, float playerV = 0, float playerH2 = 0, float playerV2 = 0)
@@ -89,7 +105,14 @@ public class MovePlayerScript : MonoBehaviour
 
         _players[2].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
         _players[2].transform.LookAt(LookAtGameObject2.transform);
-
+        if (Input.GetButton("ShootPlayer1"))
+        {
+            _selectedGun[2].AllowedToShoot = true;
+        }
+        else if (Input.GetButtonUp("ShootPlayer1"))
+        {
+            _selectedGun[2].AllowedToShoot = false;
+        }
 
     }
 
@@ -100,6 +123,45 @@ public class MovePlayerScript : MonoBehaviour
 
         _players[3].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
         _players[3].transform.LookAt(LookAtGameObject3.transform);
+        if (Input.GetButton("ShootPlayer1"))
+        {
+            _selectedGun[3].AllowedToShoot = true;
+        }
+        else if (Input.GetButtonUp("ShootPlayer1"))
+        {
+            _selectedGun[3].AllowedToShoot = false;
+        }
+    }
 
+    public void GetGun(GameObject playerObject, Gun gunScript, int ammo)
+    {
+        int player = -1;
+
+        for (int i = 0; i < _players.Length; i++)
+        {
+            if (_players[i] == playerObject)
+            {
+                player = i;
+            }
+        }
+
+        if (player == -1)
+        {
+            Debug.Log("ERROR, Player not found.");
+            return;
+        }
+
+        for (int i = 0; i < _currentPlayerGuns.GetLength(1); i++)
+        {
+            if (_currentPlayerGuns[player, i] == null)
+            {
+                _currentPlayerGuns[player, i] = gunScript;
+                _selectedGun[player] = gunScript;
+                gunScript.SetAmmo(ammo);
+                return;
+            }
+        }
+        Destroy(gunScript.GetComponent<GameObject>());
+        Debug.Log("No space for gun in inventory, Destroying Gun...");
     }
 }

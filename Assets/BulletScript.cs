@@ -3,9 +3,14 @@ using System.Collections;
 
 public class BulletScript : MonoBehaviour
 {
+    private int _bulletSpeed = 50;
+    public int BuletSpeed
+    {
+        set { _bulletSpeed = value; }
+    }
     void Update()
     {
-        transform.position += transform.forward * Time.deltaTime * 50;
+        transform.position += transform.forward * Time.deltaTime * _bulletSpeed;
     }
     public bool IsActive()
     {

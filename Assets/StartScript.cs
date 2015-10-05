@@ -7,6 +7,10 @@ public class StartScript : MonoBehaviour
     MovePlayerScript _movePlayerScript;
     [SerializeField]
     private Camera[] _playerCameras;
+    [SerializeField]
+    GameObject _pistol;
+    [SerializeField]
+    GameObject[] _PlayerPistolPivots;
 
     private int _amountOfPlayers = 0;
     private int _gamestate = 0;
@@ -25,11 +29,21 @@ public class StartScript : MonoBehaviour
         _playerColor[1] = Color.blue;
         _playerColor[2] = Color.green;
         _playerColor[3] = Color.yellow;
+
+        for(int i = 0; i < _players.Length; i++)
+        {
+            GameObject temp = GameObject.Instantiate(_pistol,new Vector3(0, 0, 0),Quaternion.Euler(-90,0,0)) as GameObject;
+            temp.transform.parent = _players[i].transform;
+            temp.transform.localPosition = Vector3.zero;
+            Gun gunComponent = new Gun();
+            gunComponent.ShootBehaviour = new Pistol();
+
+        }
     }
 
     void Update()
     {
-        for(int i = 0; i < _amountOfPlayers; i ++)
+        for (int i = 0; i < _amountOfPlayers; i++)
         {
             _playerCameras[i].transform.position = new Vector3(_players[i].transform.position.x, _playerCameras[i].transform.position.y, _players[i].transform.position.z);
             _playerCameras[i].transform.LookAt(_players[i].transform);
@@ -43,8 +57,8 @@ public class StartScript : MonoBehaviour
             if (GUI.Button(new Rect(10, 10, 100, 30), "2 players"))
             {
                 _amountOfPlayers = 2;
-                _playerCameras[0].rect = new Rect(0f,    0, 0.49f, 1);
-                _playerCameras[1].rect = new Rect(0.51f, 0, 0.49f, 1);
+                _playerCameras[0].rect = new Rect(0f, 0, 0.5f, 1);
+                _playerCameras[1].rect = new Rect(0.5f, 0, 5f, 1);
                 _playerCameras[2].enabled = false;
                 _playerCameras[3].enabled = false;
                 _players[0].SetActive(true);
@@ -54,9 +68,9 @@ public class StartScript : MonoBehaviour
             if (GUI.Button(new Rect(10, 40, 100, 30), "3 players"))
             {
                 _amountOfPlayers = 3;
-                _playerCameras[0].rect = new Rect(0,     0.51f,     0.49f, 0.49f);
-                _playerCameras[1].rect = new Rect(0.51f, 0.51f,     0.49f, 0.49f);
-                _playerCameras[2].rect = new Rect(0,     0,         1,     0.49f);
+                _playerCameras[0].rect = new Rect(0, 0.51f, 0.49f, 0.49f);
+                _playerCameras[1].rect = new Rect(0.51f, 0.51f, 0.49f, 0.49f);
+                _playerCameras[2].rect = new Rect(0, 0, 1, 0.49f);
                 _playerCameras[3].enabled = false;
                 _players[0].SetActive(true);
                 _players[1].SetActive(true);
@@ -66,10 +80,10 @@ public class StartScript : MonoBehaviour
             if (GUI.Button(new Rect(10, 70, 100, 30), "4 players"))
             {
                 _amountOfPlayers = 4;
-                _playerCameras[0].rect = new Rect(0,     0.51f, 0.49f, 0.49f);
-                _playerCameras[1].rect = new Rect(0.51f, 0.51f, 0.49f, 0.49f);
-                _playerCameras[2].rect = new Rect(0,     0,     0.49f, 0.49f);
-                _playerCameras[3].rect = new Rect(0.51f, 0,     0.49f, 0.49f);
+                _playerCameras[0].rect = new Rect(0, 0.51f, 0.49f, 0.49f);
+                _playerCameras[1].rect = new Rect(0.5f, 0.51f, 0.5f, 0.49f);
+                _playerCameras[2].rect = new Rect(0, 0, 0.49f, 0.49f);
+                _playerCameras[3].rect = new Rect(0.5f, 0, 0.5f, 0.49f);
                 _players[0].SetActive(true);
                 _players[1].SetActive(true);
                 _players[2].SetActive(true);
