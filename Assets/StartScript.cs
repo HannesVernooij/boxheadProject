@@ -29,16 +29,6 @@ public class StartScript : MonoBehaviour
         _playerColor[1] = Color.blue;
         _playerColor[2] = Color.green;
         _playerColor[3] = Color.yellow;
-
-        for(int i = 0; i < _players.Length; i++)
-        {
-            GameObject temp = GameObject.Instantiate(_pistol,new Vector3(0, 0, 0),Quaternion.Euler(-90,0,0)) as GameObject;
-            temp.transform.parent = _players[i].transform;
-            temp.transform.localPosition = Vector3.zero;
-            Gun gunComponent = new Gun();
-            gunComponent.ShootBehaviour = new Pistol();
-            _movePlayerScript.GetGun(_players[i], gunComponent, 50);
-        }
     }
 
     void Update()
@@ -109,6 +99,17 @@ public class StartScript : MonoBehaviour
             _movePlayerScript.Players = _players;
             _movePlayerScript.Gamestate = _gamestate;
             _movePlayerScript.PlayerCameras = _playerCameras;
+
+            for (int i = 0; i < _players.Length; i++)
+            {
+                GameObject temp = GameObject.Instantiate(_pistol, new Vector3(0, 0, 0), Quaternion.Euler(-90, 0, 0)) as GameObject;
+                temp.transform.parent = _players[i].transform;
+                temp.transform.localPosition = Vector3.zero;
+                Gun gunComponent = new Gun();
+                gunComponent.ShootBehaviour = new Pistol();
+                _movePlayerScript.GetGun(_players[i], gunComponent, 50);
+                _gamestate = 2;
+            }
         }
     }
 

@@ -1,0 +1,17 @@
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.dll
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.pdb
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\UnityEditor.dll
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\UnityEngine.Analytics.dll
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\UnityEngine.dll
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\UnityEngine.Networking.dll
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\UnityEngine.xml
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\UnityEditor.xml
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\UnityEngine.Networking.xml
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\UnityEngine.Analytics.xml
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\obj\Debug\UnityVS.boxheadProject.CSharp.Plugins.csprojResolveAssemblyReference.cache
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\obj\Debug\Assembly-CSharp-firstpass.dll
+D:\Users\H. Vernooy\Documents\Unity 5 Projects\Jaar 2\Project\boxheadProject\obj\Debug\Assembly-CSharp-firstpass.pdb

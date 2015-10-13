@@ -69,15 +69,15 @@ public class MovePlayerScript : MonoBehaviour
     private void Player1Movement(float playerH = 0, float playerV = 0, float playerH2 = 0, float playerV2 = 0)
     {
         //Bewegen
-        LookAtGameObject.transform.position = new Vector3(_players[0].transform.position.x + playerH2 * 2, _players[0].transform.position.y, _players[0].transform.position.z + -playerV2 * 2);
+        LookAtGameObject.transform.position = new Vector3(_players[0].transform.position.x + playerH2, _players[0].transform.position.y, _players[0].transform.position.z + -playerV2);
 
         _players[0].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
         _players[0].transform.LookAt(LookAtGameObject.transform);
-        if (Input.GetButton("ShootPlayer1"))
+        if (Input.GetButton("Player0_RightBumper"))
         {
             _selectedGun[0].AllowedToShoot = true;
         }
-        else if (Input.GetButtonUp("ShootPlayer1"))
+        else if (Input.GetButtonUp("Player0_RightBumper"))
         {
             _selectedGun[0].AllowedToShoot = false;
         }
@@ -85,15 +85,15 @@ public class MovePlayerScript : MonoBehaviour
 
     private void Player2Movement(float playerH = 0, float playerV = 0, float playerH2 = 0, float playerV2 = 0)
     {
-        LookAtGameObject1.transform.position = new Vector3(_players[1].transform.position.x + playerH2 * 2, _players[1].transform.position.y, _players[1].transform.position.z + -playerV2 * 2);
+        LookAtGameObject1.transform.position = new Vector3(_players[1].transform.position.x + playerH2, _players[1].transform.position.y, _players[1].transform.position.z + -playerV2);
 
         _players[1].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
         _players[1].transform.LookAt(LookAtGameObject1.transform);
-        if (Input.GetButton("ShootPlayer1"))
+        if (Input.GetButton("Player1_RightBumper"))
         {
             _selectedGun[1].AllowedToShoot = true;
         }
-        else if (Input.GetButtonUp("ShootPlayer1"))
+        else if (Input.GetButtonUp("Player1_RightBumper"))
         {
             _selectedGun[1].AllowedToShoot = false;
         }
@@ -101,15 +101,15 @@ public class MovePlayerScript : MonoBehaviour
 
     private void Player3Movement(float playerH = 0, float playerV = 0, float playerH2 = 0, float playerV2 = 0)
     {
-        LookAtGameObject2.transform.position = new Vector3(_players[2].transform.position.x + playerH2 * 2, _players[2].transform.position.y, _players[2].transform.position.z + -playerV2 * 2);
+        LookAtGameObject2.transform.position = new Vector3(_players[2].transform.position.x + playerH2, _players[2].transform.position.y, _players[2].transform.position.z + -playerV2);
 
         _players[2].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
         _players[2].transform.LookAt(LookAtGameObject2.transform);
-        if (Input.GetButton("ShootPlayer1"))
+        if (Input.GetButton("Player2_RightBumper"))
         {
             _selectedGun[2].AllowedToShoot = true;
         }
-        else if (Input.GetButtonUp("ShootPlayer1"))
+        else if (Input.GetButtonUp("Player2_RightBumper"))
         {
             _selectedGun[2].AllowedToShoot = false;
         }
@@ -119,15 +119,15 @@ public class MovePlayerScript : MonoBehaviour
     private void Player4Movement(float playerH = 0, float playerV = 0, float playerH2 = 0, float playerV2 = 0)
     {
 
-        LookAtGameObject3.transform.position = new Vector3(_players[3].transform.position.x + playerH2 * 2, _players[3].transform.position.y, _players[3].transform.position.z + -playerV2 * 2);
+        LookAtGameObject3.transform.position = new Vector3(_players[3].transform.position.x + playerH2/2, _players[3].transform.position.y, _players[3].transform.position.z + -playerV2/2);
 
         _players[3].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
         _players[3].transform.LookAt(LookAtGameObject3.transform);
-        if (Input.GetButton("ShootPlayer1"))
+        if (Input.GetButton("Player3_RightBumper"))
         {
             _selectedGun[3].AllowedToShoot = true;
         }
-        else if (Input.GetButtonUp("ShootPlayer1"))
+        else if (Input.GetButtonUp("Player3_RightBumper"))
         {
             _selectedGun[3].AllowedToShoot = false;
         }
