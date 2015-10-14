@@ -15,10 +15,6 @@ public class EnemyDropScript : MonoBehaviour
             dropChance = (int)Random.Range(80f, 100f);
         }
     }
-    void Update()
-    {
-
-    }
     void OnDisable()
     {
         if (dropChance >= 0 && dropChance <= 20)

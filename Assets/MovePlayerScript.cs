@@ -38,8 +38,10 @@ public class MovePlayerScript : MonoBehaviour
     {
         set { _playerCameras = value; }
     }
-
-
+    public Gun[] GetSelectedGun
+    {
+        get { return _selectedGun; }
+    }
     void Start()
     {
         LookAtGameObject = GameObject.FindGameObjectWithTag("LookAtCube");

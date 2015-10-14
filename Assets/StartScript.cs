@@ -11,6 +11,8 @@ public class StartScript : MonoBehaviour
     GameObject _pistol;
     [SerializeField]
     GameObject[] _PlayerPistolPivots;
+    [SerializeField]
+    GameObject[] _PlayerCanvasScript = new GameObject[4];
 
     private int _amountOfPlayers = 0;
     private int _gamestate = 0;
@@ -53,6 +55,7 @@ public class StartScript : MonoBehaviour
                 _playerCameras[3].enabled = false;
                 _players[0].SetActive(true);
                 _players[1].SetActive(true);
+                HandlePlayerCanvasScript(1);
             }
 
             if (GUI.Button(new Rect(10, 40, 100, 30), "3 players"))
@@ -65,6 +68,7 @@ public class StartScript : MonoBehaviour
                 _players[0].SetActive(true);
                 _players[1].SetActive(true);
                 _players[2].SetActive(true);
+                HandlePlayerCanvasScript(2);
             }
 
             if (GUI.Button(new Rect(10, 70, 100, 30), "4 players"))
@@ -78,6 +82,7 @@ public class StartScript : MonoBehaviour
                 _players[1].SetActive(true);
                 _players[2].SetActive(true);
                 _players[3].SetActive(true);
+                HandlePlayerCanvasScript(3);
             }
         }
         else if (_gamestate == 0)
@@ -112,5 +117,11 @@ public class StartScript : MonoBehaviour
             }
         }
     }
-
+    private void HandlePlayerCanvasScript(int index)
+    {
+        for (int i = 0; i <= index; i++)
+        {
+            _PlayerCanvasScript[i].AddComponent<UiScript>();
+        }
+    }
 }

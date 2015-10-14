@@ -1,42 +1,17 @@
 fileFormatVersion: 2
-guid: 40c2f7b8fba620648aa25214f323f9d7
-timeCreated: 1442493178
+guid: fb1bb69146384f745a90728f7fae9d7c
+timeCreated: 1444761868
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pCube1
-    100004: pCube51
-    100006: pCube52
-    100008: pCube56
-    100010: pCube57
-    100012: pCube69
-    100014: pCube8
-    100016: transform19
-    100018: transform20
-    100020: transform21
-    100022: transform22
-    100024: transform23
-    100026: transform24
+    100002: Character_3
     400000: //RootNode
-    400002: pCube1
-    400004: pCube51
-    400006: pCube52
-    400008: pCube56
-    400010: pCube57
-    400012: pCube69
-    400014: pCube8
-    400016: transform19
-    400018: transform20
-    400020: transform21
-    400022: transform22
-    400024: transform23
-    400026: transform24
-    2300000: pCube69
-    3300000: pCube69
-    4300000: pCube69
-    9500000: //RootNode
+    400002: Character_3
+    2300000: Character_3
+    3300000: Character_3
+    4300000: Character_3
   materials:
     importMaterials: 1
     materialName: 0
@@ -60,7 +35,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: .100000001
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -93,8 +68,10 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
