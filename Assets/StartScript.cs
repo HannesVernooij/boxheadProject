@@ -37,7 +37,7 @@ public class StartScript : MonoBehaviour
     {
         for (int i = 0; i < _amountOfPlayers; i++)
         {
-            _playerCameras[i].transform.position = new Vector3(_players[i].transform.position.x, _playerCameras[i].transform.position.y, _players[i].transform.position.z);
+            _playerCameras[i].transform.position = new Vector3(_players[i].transform.position.x, 5, _players[i].transform.position.z);
             _playerCameras[i].transform.LookAt(_players[i].transform);
         }
     }
@@ -101,10 +101,10 @@ public class StartScript : MonoBehaviour
         if (_gamestate == 1)
         {
             _movePlayerScript.AmountOfPlayers = _amountOfPlayers;
-            _movePlayerScript.Players = _players;
+            //_movePlayerScript.Players = _players; <------------------
             _movePlayerScript.Gamestate = _gamestate;
             _movePlayerScript.PlayerCameras = _playerCameras;
-
+            /*
             for (int i = 0; i < _players.Length; i++)
             {
                 GameObject temp = GameObject.Instantiate(_pistol, new Vector3(0, 0, 0), Quaternion.Euler(-90, 0, 0)) as GameObject;
@@ -114,14 +114,14 @@ public class StartScript : MonoBehaviour
                 gunComponent.ShootBehaviour = new Pistol();
                 _movePlayerScript.GetGun(_players[i], gunComponent, 50);
                 _gamestate = 2;
-            }
+            }*/
         }
     }
     private void HandlePlayerCanvasScript(int index)
     {
         for (int i = 0; i <= index; i++)
         {
-            _PlayerCanvasScript[i].AddComponent<UiScript>();
+            //_PlayerCanvasScript[i].AddComponent<UiScript>();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class MovePlayerScript : MonoBehaviour
 {
     private Camera[] _playerCameras;
+    [SerializeField]
     private GameObject[] _players = new GameObject[4];
     private Gun[,] _currentPlayerGuns = new Gun[4, 2];
     private Gun[] _selectedGun = new Gun[4];
@@ -21,11 +22,11 @@ public class MovePlayerScript : MonoBehaviour
     GameObject LookAtGameObject2;
     GameObject LookAtGameObject3;
 
-    public GameObject[] Players
+    /*public GameObject[] Players
     {
         set { _players = value; }
 
-    }
+    }*/
     public int AmountOfPlayers
     {
         set { _amountOfPlayers = value; }
@@ -77,11 +78,12 @@ public class MovePlayerScript : MonoBehaviour
         _players[0].transform.LookAt(LookAtGameObject.transform);
         if (Input.GetButton("Player0_RightBumper"))
         {
-            _selectedGun[0].AllowedToShoot = true;
+            //_selectedGun[0].AllowedToShoot = true;
+            GameObject.Instantiate(Resources.Load("Bullet"),transform.position,Quaternion.identity);
         }
         else if (Input.GetButtonUp("Player0_RightBumper"))
         {
-            _selectedGun[0].AllowedToShoot = false;
+            //_selectedGun[0].AllowedToShoot = false;
         }
     }
 
