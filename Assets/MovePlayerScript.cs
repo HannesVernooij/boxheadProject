@@ -3,11 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 public class MovePlayerScript : MonoBehaviour
 {
-    public float slowingDownSpeed;
     private Camera[] _playerCameras;
+    [SerializeField]
     private GameObject[] _players = new GameObject[4];
     private Gun[,] _currentPlayerGuns = new Gun[4, 2];
     private Gun[] _selectedGun = new Gun[4];
+    private GameObject[][] _gunSlots = new GameObject[][]
+        {
+        new GameObject[2],
+        new GameObject[2],
+        new GameObject[2],
+        new GameObject[2]
+        };
     private int _amountOfPlayers = 0;
     private int _gamestate = 0;
     GameObject LookAtGameObject;
@@ -15,11 +22,11 @@ public class MovePlayerScript : MonoBehaviour
     GameObject LookAtGameObject2;
     GameObject LookAtGameObject3;
 
-    public GameObject[] Players
+    /*public GameObject[] Players
     {
         set { _players = value; }
 
-    }
+    }*/
     public int AmountOfPlayers
     {
         set { _amountOfPlayers = value; }
@@ -67,7 +74,7 @@ public class MovePlayerScript : MonoBehaviour
         //Bewegen
         LookAtGameObject.transform.position = new Vector3(_players[0].transform.position.x + playerH2, _players[0].transform.position.y, _players[0].transform.position.z + -playerV2);
 
-        _players[0].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
+        _players[0].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
         _players[0].transform.LookAt(LookAtGameObject.transform);
         if (Input.GetButton("Player0_RightBumper"))
         {
@@ -84,7 +91,7 @@ public class MovePlayerScript : MonoBehaviour
     {
         LookAtGameObject1.transform.position = new Vector3(_players[1].transform.position.x + playerH2, _players[1].transform.position.y, _players[1].transform.position.z + -playerV2);
 
-        _players[1].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
+        _players[1].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
         _players[1].transform.LookAt(LookAtGameObject1.transform);
         if (Input.GetButton("Player1_RightBumper"))
         {
@@ -100,7 +107,7 @@ public class MovePlayerScript : MonoBehaviour
     {
         LookAtGameObject2.transform.position = new Vector3(_players[2].transform.position.x + playerH2, _players[2].transform.position.y, _players[2].transform.position.z + -playerV2);
 
-        _players[2].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
+        _players[2].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
         _players[2].transform.LookAt(LookAtGameObject2.transform);
         if (Input.GetButton("Player2_RightBumper"))
         {
@@ -118,7 +125,7 @@ public class MovePlayerScript : MonoBehaviour
 
         LookAtGameObject3.transform.position = new Vector3(_players[3].transform.position.x + playerH2/2, _players[3].transform.position.y, _players[3].transform.position.z + -playerV2/2);
 
-        _players[3].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
+        _players[3].transform.Translate(new Vector3(playerH / 6, 0, -playerV / 6), Space.World);
         _players[3].transform.LookAt(LookAtGameObject3.transform);
         if (Input.GetButton("Player3_RightBumper"))
         {
