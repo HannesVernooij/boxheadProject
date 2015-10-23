@@ -1,11 +1,11 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{32E533C8-32E6-C341-AE87-BD24335095A9}") = "boxheadProject", "Assembly-CSharp-firstpass.csproj", "{747FC7FF-E5DC-31E4-E909-4CAEC4C29BAB}"
+Project("{32E533C8-32E6-C341-AE87-BD24335095A9}") = "boxheadProject", "Assembly-CSharp-firstpass-vs.csproj", "{747FC7FF-E5DC-31E4-E909-4CAEC4C29BAB}"
 EndProject
-Project("{32E533C8-32E6-C341-AE87-BD24335095A9}") = "boxheadProject", "Assembly-CSharp.csproj", "{6B072BF8-87BE-B13E-FB7B-167ABA639920}"
+Project("{32E533C8-32E6-C341-AE87-BD24335095A9}") = "boxheadProject", "Assembly-CSharp-vs.csproj", "{6B072BF8-87BE-B13E-FB7B-167ABA639920}"
 EndProject
-Project("{32E533C8-32E6-C341-AE87-BD24335095A9}") = "boxheadProject", "Assembly-CSharp-Editor.csproj", "{F18B4F04-FF4B-4FDD-64BF-37E2930FC331}"
+Project("{32E533C8-32E6-C341-AE87-BD24335095A9}") = "boxheadProject", "Assembly-CSharp-Editor-vs.csproj", "{F18B4F04-FF4B-4FDD-64BF-37E2930FC331}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																											GlobalSection(MonoDevelopProperties) = preSolution
+																												GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

@@ -23,6 +23,7 @@ public class MovePlayerScript : MonoBehaviour
     public int AmountOfPlayers
     {
         set { _amountOfPlayers = value; }
+        get { return _amountOfPlayers; }
     }
     public int Gamestate
     {
@@ -69,14 +70,9 @@ public class MovePlayerScript : MonoBehaviour
 
         _players[0].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
         _players[0].transform.LookAt(LookAtGameObject.transform);
-        if (Input.GetButton("Player0_RightBumper"))
+        if (Input.GetKey(KeyCode.Space) && _selectedGun[0] != null)
         {
-            //_selectedGun[0].AllowedToShoot = true;
-            GameObject.Instantiate(Resources.Load("Bullet"),transform.position,Quaternion.identity);
-        }
-        else if (Input.GetButtonUp("Player0_RightBumper"))
-        {
-            //_selectedGun[0].AllowedToShoot = false;
+            _selectedGun[0].Shoot();
         }
     }
 
@@ -86,13 +82,9 @@ public class MovePlayerScript : MonoBehaviour
 
         _players[1].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
         _players[1].transform.LookAt(LookAtGameObject1.transform);
-        if (Input.GetButton("Player1_RightBumper"))
+        if (Input.GetKey(KeyCode.Space) && _selectedGun[1] != null)
         {
-            _selectedGun[1].AllowedToShoot = true;
-        }
-        else if (Input.GetButtonUp("Player1_RightBumper"))
-        {
-            _selectedGun[1].AllowedToShoot = false;
+            _selectedGun[1].Shoot();
         }
     }
 
@@ -102,15 +94,10 @@ public class MovePlayerScript : MonoBehaviour
 
         _players[2].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
         _players[2].transform.LookAt(LookAtGameObject2.transform);
-        if (Input.GetButton("Player2_RightBumper"))
+        if (Input.GetKey(KeyCode.Space) && _selectedGun[2] != null)
         {
-            _selectedGun[2].AllowedToShoot = true;
+            _selectedGun[2].Shoot();
         }
-        else if (Input.GetButtonUp("Player2_RightBumper"))
-        {
-            _selectedGun[2].AllowedToShoot = false;
-        }
-
     }
 
     private void Player4Movement(float playerH = 0, float playerV = 0, float playerH2 = 0, float playerV2 = 0)
@@ -120,17 +107,14 @@ public class MovePlayerScript : MonoBehaviour
 
         _players[3].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
         _players[3].transform.LookAt(LookAtGameObject3.transform);
-        if (Input.GetButton("Player3_RightBumper"))
+        if (Input.GetKey(KeyCode.Space) && _selectedGun[3] != null)
         {
-            _selectedGun[3].AllowedToShoot = true;
-        }
-        else if (Input.GetButtonUp("Player3_RightBumper"))
-        {
-            _selectedGun[3].AllowedToShoot = false;
+            _selectedGun[3].Shoot();
         }
     }
 
-    public void GetGun(GameObject playerObject, Gun gunScript, int ammo)
+
+    public void GetGun(GameObject playerObject, Gun gunScript, int ammo, int id)
     {
         int player = -1;
 
@@ -152,9 +136,25 @@ public class MovePlayerScript : MonoBehaviour
         {
             if (_currentPlayerGuns[player, i] == null)
             {
-                _currentPlayerGuns[player, i] = gunScript;
-                _selectedGun[player] = gunScript;
-                gunScript.SetAmmo(ammo);
+                if(_selectedGun[player] != null)
+                {
+                    if (gunScript.gameObject.tag != _selectedGun[player].gameObject.tag)
+                    {
+                        _selectedGun[player].gameObject.SetActive(false);
+                        _currentPlayerGuns[player, i] = gunScript;
+                        _selectedGun[player] = gunScript;
+                    }
+                    else
+                    {
+                        _selectedGun[player].Ammo(ammo + _selectedGun[player].Ammo());
+                        Destroy(gunScript.gameObject);
+                    }
+                }
+                else
+                {
+                    _currentPlayerGuns[player, i] = gunScript;
+                    _selectedGun[player] = gunScript;
+                }
                 return;
             }
         }

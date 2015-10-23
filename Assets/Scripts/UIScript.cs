@@ -5,16 +5,19 @@ using System.Collections;
 public class UIScript : MonoBehaviour
 {
     [SerializeField]
-    private Text[] _TextAmmo = new Text[4]; //0 = pistol, 1 = Shotgun, 2 = Rifle en 3 = Sniper Rifle //De children volgorde van de canvasplayer Prefab moet Pistol - Shotgun - Rifle - SniperRifle zijn!
+    private Text[] _AmountOfPistolAmmo; //{0 - 4 = PLAYER ID}
     [SerializeField]
     private MovePlayerScript _MovePlayerScript;                    
     private void Start()
     {
-        _TextAmmo = transform.GetComponentsInChildren<Text>();
         _MovePlayerScript = GameObject.FindObjectOfType<MovePlayerScript>();
     }
-    private void SetPistolText()
+    private void Update()
     {
-        //_TextAmmo[0].text = _MovePlayerScript.GetSelectedGun[0].FullClips();
+        for (int i = 0; i < _MovePlayerScript.AmountOfPlayers; i++)
+        {
+            if(_MovePlayerScript.GetSelectedGun[i] != null && _MovePlayerScript.GetSelectedGun[i].tag == "Pistol")
+            _AmountOfPistolAmmo[i].text = _MovePlayerScript.GetSelectedGun[i].AmmoInClip().ToString() +" / " + _MovePlayerScript.GetSelectedGun[i].FullClips().ToString() + " Player " + i;
+        }
     }
 }
