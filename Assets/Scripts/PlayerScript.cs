@@ -134,7 +134,7 @@ public class PlayerScript : MonoBehaviour
                     gunScript.ShootDelay = 2f;
                     gunScript.ReloadSpeed = 3.5f;
                     gunScript.Ammo(Random.Range(6, 20));
-                    gunScript.Damage = 5;
+                    gunScript.Damage = 9;
                     Destroy(gunScript.gameObject.GetComponent<BoxCollider>());
                     break;
 
