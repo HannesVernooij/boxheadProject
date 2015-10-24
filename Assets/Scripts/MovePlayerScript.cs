@@ -15,7 +15,14 @@ public class MovePlayerScript : MonoBehaviour
     GameObject LookAtGameObject1;
     GameObject LookAtGameObject2;
     GameObject LookAtGameObject3;
+    int _damage = 0;
+    int selectedGunCounter = 0;
 
+    public Gun[,] CurrentPlayerGuns
+    {
+        set { _currentPlayerGuns = value; }
+        get { return _currentPlayerGuns; }
+    }
     public GameObject[] Players
     {
         set { _players = value; }
@@ -78,6 +85,33 @@ public class MovePlayerScript : MonoBehaviour
         {
             _selectedGun[0].Shoot();
         }
+        if (Input.GetButtonDown("Player0_Y")) // switch guns
+        {
+            int other;
+            Debug.Log(_selectedGun[0] + " " + _currentPlayerGuns[0, selectedGunCounter]);
+
+            other = (selectedGunCounter == 0 ? 1 : 0);
+
+            if (_selectedGun[0] != null)
+            {
+                _selectedGun[0].gameObject.SetActive(false);
+            }
+            if (_currentPlayerGuns[0, other] != null)
+            {
+                _currentPlayerGuns[0, other].gameObject.SetActive(true);
+            }
+            selectedGunCounter = other;
+            _selectedGun[0] = _currentPlayerGuns[0, selectedGunCounter];
+            Debug.Log(selectedGunCounter);
+        }
+        if (Input.GetButtonDown("Player0_B") && _selectedGun[0] != null) // delete selected gun
+        {
+            Destroy(_selectedGun[0].gameObject);
+            _selectedGun[0] = null;
+            selectedGunCounter = (selectedGunCounter++) % 2;
+            Debug.Log(selectedGunCounter);
+            Debug.Log(CurrentPlayerGuns[0, selectedGunCounter]);
+        }
     }
 
     private void Player2Movement(float playerH = 0, float playerV = 0, float playerH2 = 0, float playerV2 = 0)
@@ -90,6 +124,18 @@ public class MovePlayerScript : MonoBehaviour
         if (Input.GetButton("Player1_RightBumper") && _selectedGun[1] != null)
         {
             _selectedGun[1].Shoot();
+        }
+        if (Input.GetButtonDown("Player1_Y"))
+        {
+            int other = (selectedGunCounter == 0 ? 1 : 0);
+
+            if (_currentPlayerGuns[1, other] != null)
+            {
+                _currentPlayerGuns[1, other].gameObject.SetActive(true);
+                _selectedGun[1].gameObject.SetActive(false);
+                selectedGunCounter = other;
+                _selectedGun[1] = _currentPlayerGuns[1, selectedGunCounter];
+            }
         }
     }
 
@@ -104,12 +150,24 @@ public class MovePlayerScript : MonoBehaviour
         {
             _selectedGun[2].Shoot();
         }
+        if (Input.GetButtonDown("Player2_Y"))
+        {
+            int other = (selectedGunCounter == 0 ? 1 : 0);
+
+            if (_currentPlayerGuns[2, other] != null)
+            {
+                _currentPlayerGuns[2, other].gameObject.SetActive(true);
+                _selectedGun[2].gameObject.SetActive(false);
+                selectedGunCounter = other;
+                _selectedGun[2] = _currentPlayerGuns[2, selectedGunCounter];
+            }
+        }
     }
 
     private void Player4Movement(float playerH = 0, float playerV = 0, float playerH2 = 0, float playerV2 = 0)
     {
 
-        LookAtGameObject3.transform.position = new Vector3(_players[3].transform.position.x + playerH2/2, _players[3].transform.position.y, _players[3].transform.position.z + -playerV2/2);
+        LookAtGameObject3.transform.position = new Vector3(_players[3].transform.position.x + playerH2 / 2, _players[3].transform.position.y, _players[3].transform.position.z + -playerV2 / 2);
         int amountOfBoxes = _players[3].GetComponent<PlayerScript>().CurrentBoxes;
         slowingDownSpeed = defaultSlowingDownSpeed + (amountOfBoxes * 2);
         _players[3].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
@@ -117,6 +175,18 @@ public class MovePlayerScript : MonoBehaviour
         if (Input.GetButton("Player3_RightBumper") && _selectedGun[3] != null)
         {
             _selectedGun[3].Shoot();
+        }
+        if (Input.GetButtonDown("Player3_Y"))
+        {
+            int other = (selectedGunCounter == 0 ? 1 : 0);
+
+            if (_currentPlayerGuns[3, other] != null)
+            {
+                _currentPlayerGuns[3, other].gameObject.SetActive(true);
+                _selectedGun[3].gameObject.SetActive(false);
+                selectedGunCounter = other;
+                _selectedGun[3] = _currentPlayerGuns[3, selectedGunCounter];
+            }
         }
     }
 
@@ -143,13 +213,14 @@ public class MovePlayerScript : MonoBehaviour
         {
             if (_currentPlayerGuns[player, i] == null)
             {
-                if(_selectedGun[player] != null)
+                if (_selectedGun[player] != null)
                 {
                     if (gunScript.gameObject.tag != _selectedGun[player].gameObject.tag)
                     {
                         _selectedGun[player].gameObject.SetActive(false);
                         _currentPlayerGuns[player, i] = gunScript;
                         _selectedGun[player] = gunScript;
+
                     }
                     else
                     {
@@ -165,7 +236,7 @@ public class MovePlayerScript : MonoBehaviour
                 return;
             }
         }
-        Destroy(gunScript.GetComponent<GameObject>());
+        Destroy(gunScript.gameObject);
         Debug.Log("No space for gun in inventory, Destroying Gun...");
     }
 }

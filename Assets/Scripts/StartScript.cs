@@ -9,6 +9,8 @@ public class StartScript : MonoBehaviour
     private Camera[] _playerCameras;
     [SerializeField]
     GameObject _pistol;
+    [SerializeField]
+    UIScript _uiScript;
 
     private int _amountOfPlayers = 0;
     private int _gamestate = 0;
@@ -103,6 +105,7 @@ public class StartScript : MonoBehaviour
             _movePlayerScript.Players = _players;
             _movePlayerScript.Gamestate = _gamestate;
             _movePlayerScript.PlayerCameras = _playerCameras;
+            _uiScript.InitializeValues();
 
             for (int i = 0; i < _players.Length; i++)
             {

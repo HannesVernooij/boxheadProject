@@ -21,7 +21,7 @@ public class Pool : MonoBehaviour
         GameObject parentObject = GameObject.Instantiate(new GameObject());
         parentObject.name = PoolName;
         _poolArray = new PoolableObjects[_poolSize];
-        for(int i = 0; i < _poolSize; i++)
+        for (int i = 0; i < _poolSize; i++)
         {
             PoolableObjects temp = GameObject.Instantiate(_poolablePrefab) as PoolableObjects;
             temp.transform.parent = parentObject.transform;
@@ -29,18 +29,32 @@ public class Pool : MonoBehaviour
             temp.Deactivate();
         }
     }
-    
-    public void CreateObject(Vector3 position, Quaternion rotation)
+
+    public void CreateObject(Vector3 position, Quaternion rotation, int damage, string weaponTag)
+    {
+        switch (weaponTag)
+        {
+            case "Shotgun":
+                ShootFreeObject(position, (rotation * Quaternion.Euler(0, rotation.y - 15, 0)), damage);
+                ShootFreeObject(position, (rotation * Quaternion.Euler(0, rotation.y - 0, 0)), damage);
+                ShootFreeObject(position, (rotation * Quaternion.Euler(0, rotation.y + 15, 0)), damage);
+                break;
+
+            default:
+                ShootFreeObject(position, (rotation * Quaternion.Euler(0, rotation.y - 0, 0)), damage);
+                break;
+        }
+
+    }
+
+    private void ShootFreeObject(Vector3 position, Quaternion rotation, int damage)
     {
         for (int i = 0; i < _poolArray.Length; i++)
         {
             if (_poolArray[i].IsActive() == false)
             {
                 _poolArray[i].SetActive(position, rotation);
-                if(tag != "Untagged")
-                {
-                    Debug.Log(tag);
-                }
+                _poolArray[i].SetDamage(damage);
                 break;
             }
         }

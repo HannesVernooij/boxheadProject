@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BulletScript : PoolableObjects
 {
+    private int _damage;
     public override bool IsActive()
     {
         return gameObject.activeSelf;
@@ -17,12 +18,13 @@ public class BulletScript : PoolableObjects
 
     public override void Deactivate()
     {
+        _damage = 0;
         gameObject.SetActive(false);
     }
 
     public void Update()
     {
-        gameObject.transform.position += Vector3.forward * Time.deltaTime;
+        gameObject.transform.position += transform.forward * Time.deltaTime * 5;
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -31,5 +33,16 @@ public class BulletScript : PoolableObjects
         {
             Deactivate();
         }
+        else if(collision.collider.tag == "Player")
+        {
+            Debug.Log("HIT PLAYER");
+            collision.collider.GetComponent<PlayerScript>().HP -= _damage;
+            Deactivate();
+        }
+    }
+
+    public override void SetDamage(int damage)
+    {
+        _damage = damage;
     }
 }

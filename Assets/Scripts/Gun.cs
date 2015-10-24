@@ -13,6 +13,12 @@ public class Gun : MonoBehaviour
     private float _shootDelay = 0;
     private float _remainingDelay;
     private float _reloadSpeed;
+    private int _damage = 0;
+
+    public int Damage
+    {
+        set { _damage = value;}
+    }
 
     public float ReloadSpeed
     {
@@ -29,7 +35,7 @@ public class Gun : MonoBehaviour
     }
     public int ClipSize
     {
-        set { _clipSize = value; }
+        set { _clipSize = value+1; }
     }
 
     void Start()
@@ -55,18 +61,28 @@ public class Gun : MonoBehaviour
     }
     void Update()
     {
+        if(_damage != 0)
+        {
+            //Debug.Log(_damage);
+        }
         if (_remainingDelay >= 0)
         {
             _remainingDelay -= Time.deltaTime;
+        }
+        if(_ammoInClip == 0 && _amountOfFullClips > 0)
+        {
+            _remainingDelay += _reloadSpeed;
+            _ammo--;
+            CalculateAmmo();
         }
     }
 
     public void Shoot()
     {
-
+        Debug.Log("Shooting " + _damage);
         if (_remainingDelay <= 0 && _ammo > 0)
         {
-            _bulletPool.CreateObject(_gunPivotObject.transform.position, _gunPivotObject.transform.rotation);
+            _bulletPool.CreateObject(_gunPivotObject.transform.position, _gunPivotObject.transform.rotation, _damage, gameObject.tag);
             _ammo--;
             CalculateAmmo();
             _remainingDelay = _shootDelay;
