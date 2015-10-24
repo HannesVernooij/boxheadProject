@@ -9,8 +9,6 @@ public class StartScript : MonoBehaviour
     private Camera[] _playerCameras;
     [SerializeField]
     GameObject _pistol;
-    [SerializeField]
-    GameObject[] _PlayerPistolPivots;
 
     private int _amountOfPlayers = 0;
     private int _gamestate = 0;
@@ -47,6 +45,7 @@ public class StartScript : MonoBehaviour
             if (GUI.Button(new Rect(10, 10, 100, 30), "2 players"))
             {
                 _amountOfPlayers = 2;
+                _playerCameras[1].enabled = true;
                 _playerCameras[0].rect = new Rect(0f, 0, 0.5f, 1);
                 _playerCameras[1].rect = new Rect(0.5f, 0, 5f, 1);
                 _playerCameras[2].enabled = false;
@@ -58,6 +57,8 @@ public class StartScript : MonoBehaviour
             if (GUI.Button(new Rect(10, 40, 100, 30), "3 players"))
             {
                 _amountOfPlayers = 3;
+                _playerCameras[1].enabled = true;
+                _playerCameras[2].enabled = true;
                 _playerCameras[0].rect = new Rect(0, 0.51f, 0.49f, 0.49f);
                 _playerCameras[1].rect = new Rect(0.51f, 0.51f, 0.49f, 0.49f);
                 _playerCameras[2].rect = new Rect(0, 0, 1, 0.49f);
@@ -70,6 +71,9 @@ public class StartScript : MonoBehaviour
             if (GUI.Button(new Rect(10, 70, 100, 30), "4 players"))
             {
                 _amountOfPlayers = 4;
+                _playerCameras[1].enabled = true;
+                _playerCameras[2].enabled = true;
+                _playerCameras[3].enabled = true;
                 _playerCameras[0].rect = new Rect(0, 0.51f, 0.49f, 0.49f);
                 _playerCameras[1].rect = new Rect(0.5f, 0.51f, 0.5f, 0.49f);
                 _playerCameras[2].rect = new Rect(0, 0, 0.49f, 0.49f);

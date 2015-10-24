@@ -5,6 +5,7 @@ public class MovePlayerScript : MonoBehaviour
 {
     public float slowingDownSpeed;
     private Camera[] _playerCameras;
+    private float defaultSlowingDownSpeed;
     private GameObject[] _players = new GameObject[4];
     private Gun[,] _currentPlayerGuns = new Gun[4, 2];
     private Gun[] _selectedGun = new Gun[4];
@@ -18,6 +19,7 @@ public class MovePlayerScript : MonoBehaviour
     public GameObject[] Players
     {
         set { _players = value; }
+        get { return _players; }
 
     }
     public int AmountOfPlayers
@@ -43,6 +45,7 @@ public class MovePlayerScript : MonoBehaviour
         LookAtGameObject1 = GameObject.FindGameObjectWithTag("LookAtCube1");
         LookAtGameObject2 = GameObject.FindGameObjectWithTag("LookAtCube2");
         LookAtGameObject3 = GameObject.FindGameObjectWithTag("LookAtCube3");
+        defaultSlowingDownSpeed = slowingDownSpeed;
     }
 
     void FixedUpdate()
@@ -67,10 +70,11 @@ public class MovePlayerScript : MonoBehaviour
     {
         //Bewegen
         LookAtGameObject.transform.position = new Vector3(_players[0].transform.position.x + playerH2, _players[0].transform.position.y, _players[0].transform.position.z + -playerV2);
-
+        int amountOfBoxes = _players[0].GetComponent<PlayerScript>().CurrentBoxes;
+        slowingDownSpeed = defaultSlowingDownSpeed + (amountOfBoxes * 2);
         _players[0].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
         _players[0].transform.LookAt(LookAtGameObject.transform);
-        if (Input.GetKey(KeyCode.Space) && _selectedGun[0] != null)
+        if (Input.GetButton("Player0_RightBumper") && _selectedGun[0] != null)
         {
             _selectedGun[0].Shoot();
         }
@@ -79,10 +83,11 @@ public class MovePlayerScript : MonoBehaviour
     private void Player2Movement(float playerH = 0, float playerV = 0, float playerH2 = 0, float playerV2 = 0)
     {
         LookAtGameObject1.transform.position = new Vector3(_players[1].transform.position.x + playerH2, _players[1].transform.position.y, _players[1].transform.position.z + -playerV2);
-
+        int amountOfBoxes = _players[1].GetComponent<PlayerScript>().CurrentBoxes;
+        slowingDownSpeed = defaultSlowingDownSpeed + (amountOfBoxes * 2);
         _players[1].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
         _players[1].transform.LookAt(LookAtGameObject1.transform);
-        if (Input.GetKey(KeyCode.Space) && _selectedGun[1] != null)
+        if (Input.GetButton("Player1_RightBumper") && _selectedGun[1] != null)
         {
             _selectedGun[1].Shoot();
         }
@@ -91,10 +96,11 @@ public class MovePlayerScript : MonoBehaviour
     private void Player3Movement(float playerH = 0, float playerV = 0, float playerH2 = 0, float playerV2 = 0)
     {
         LookAtGameObject2.transform.position = new Vector3(_players[2].transform.position.x + playerH2, _players[2].transform.position.y, _players[2].transform.position.z + -playerV2);
-
+        int amountOfBoxes = _players[2].GetComponent<PlayerScript>().CurrentBoxes;
+        slowingDownSpeed = defaultSlowingDownSpeed + (amountOfBoxes * 2);
         _players[2].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
         _players[2].transform.LookAt(LookAtGameObject2.transform);
-        if (Input.GetKey(KeyCode.Space) && _selectedGun[2] != null)
+        if (Input.GetButton("Player2_RightBumper") && _selectedGun[2] != null)
         {
             _selectedGun[2].Shoot();
         }
@@ -104,10 +110,11 @@ public class MovePlayerScript : MonoBehaviour
     {
 
         LookAtGameObject3.transform.position = new Vector3(_players[3].transform.position.x + playerH2/2, _players[3].transform.position.y, _players[3].transform.position.z + -playerV2/2);
-
+        int amountOfBoxes = _players[3].GetComponent<PlayerScript>().CurrentBoxes;
+        slowingDownSpeed = defaultSlowingDownSpeed + (amountOfBoxes * 2);
         _players[3].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
         _players[3].transform.LookAt(LookAtGameObject3.transform);
-        if (Input.GetKey(KeyCode.Space) && _selectedGun[3] != null)
+        if (Input.GetButton("Player3_RightBumper") && _selectedGun[3] != null)
         {
             _selectedGun[3].Shoot();
         }
