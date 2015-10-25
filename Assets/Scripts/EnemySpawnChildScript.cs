@@ -9,14 +9,11 @@ public class EnemySpawnChildScript : MonoBehaviour
     public EnemySpawnScript GetEnemySpawnScript { get { return _EnemySpawnScript; } }
     public State State { get { return m_State; } set { m_State = value; } }
     public GameObject Player { get { return m_Player; } set { m_Player = value; } }
-    public bool CanSpawnCollider { set { m_CanSpawnCollider = value; } get { return m_CanSpawnCollider; } }
-    public bool CanSpawnPool { set { m_canSpawnPool = value; } get { return m_canSpawnPool; } }
+    public bool SetCanSpawn { set { m_CanSpawn = value; } }
 
     private State m_State;
     private GameObject m_Player;
-    private bool m_CanSpawnCollider;
-    private bool m_canSpawnPool;
-
+    private bool m_CanSpawn;
     private void Start()
     {
         _EnemySpawnScript = transform.parent.transform.GetComponent<EnemySpawnScript>();
@@ -27,10 +24,11 @@ public class EnemySpawnChildScript : MonoBehaviour
     }
     private void OnTriggerStay(Collider coll)
     {
-        if (m_State != null && m_canSpawnPool == true && m_CanSpawnCollider == true && coll.gameObject == m_Player)
+        if (m_State != null && m_CanSpawn == true && coll.gameObject == m_Player && _EnemySpawnScript.GetZombieSpawnLimit >= 0)
         {
             m_State.OnTriggerStay();
-            m_canSpawnPool = false;
+            print(transform.name + " " + coll.gameObject.transform.parent);
+
         }
 
     }
@@ -46,6 +44,7 @@ public class SpawnAllowed : State
 {
     private EnemySpawnChildScript spawn;
     private Transform transform;
+    private float timer = 0;
     public SpawnAllowed(EnemySpawnChildScript enemySpawnChildScript, Transform parentTransform)
     {
         spawn = enemySpawnChildScript;
@@ -62,7 +61,13 @@ public class SpawnAllowed : State
 
     public void OnTriggerStay()
     {
-        SpawnZombie();
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            SpawnZombie();
+            spawn.GetEnemySpawnScript.GetZombieSpawnLimit -= 1;
+            timer = 2;
+        }
     }
     private void SpawnZombie()
     {

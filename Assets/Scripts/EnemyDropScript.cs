@@ -3,12 +3,17 @@ using System.Collections;
 
 public class EnemyDropScript : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject[] m_Guns;
     private int dropChance = 0;
     void OnEnable()
     {
-        dropChance = (int)Random.Range(0, 100f);
+        if (gameObject.transform.tag == "zombieNormal")
+        {
+            dropChance = (int)Random.Range(0f, 79);
+        }
+        else
+        {
+            dropChance = (int)Random.Range(80f, 100f);
+        }
     }
     void OnDisable()
     {
@@ -16,21 +21,17 @@ public class EnemyDropScript : MonoBehaviour
         {
             print("no drop");
         }
-        else if (dropChance >= 21 && dropChance <= 50)//pistol
+        else if (dropChance >= 21 && dropChance <= 60)
         {
-
+            Instantiate(GameObject.CreatePrimitive(PrimitiveType.Sphere), transform.position, transform.rotation);
         }
-        else if (dropChance >= 51 && dropChance <= 60)//shotgun
+        else if (dropChance >= 61 && dropChance <= 80)
         {
-
+            Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cylinder), transform.position, transform.rotation);
         }
-        else if (dropChance >= 61 && dropChance <= 70)//smg
+        else if (dropChance >= 81 && dropChance <= 100)
         {
-
-        }
-        else if(dropChance >= 71 && dropChance <= 100)//Sniper rife
-        {
-
+            Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), transform.position, transform.rotation);
         }
     }
 }

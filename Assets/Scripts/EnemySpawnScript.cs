@@ -8,42 +8,20 @@ public class EnemySpawnScript : MonoBehaviour
     [SerializeField]
     private GameObject[] m_ZombiePrefabs,
                          m_ZombieSpawnPoints;
-    [SerializeField]
-    private float m_Timer = 5;
 
     public GameObject ZombiesParent { get { return m_ZombiesEmtyGameObjectParent; } set { m_ZombiesEmtyGameObjectParent = value; } }
     public GameObject[] GetZombies { get { return zombies; } }                   
-    public float Timer { get { return m_Timer; } set { m_Timer = value; } }
+    public int GetZombieSpawnLimit { get { return m_ZombieSpawnLimit; } set { m_ZombieSpawnLimit = value; } }
 
     private EnemySpawnChildScript[] _EnemySpawnChildScript;
     private GameObject m_ZombiesEmtyGameObjectParent;
     private GameObject[] zombies;
-    private int m_ZombieSpawnLimit = 2;
+    private int m_ZombieSpawnLimit = 30;
 
     private void Start()
     {
         m_ZombieSpawnPoints = ZombieSpawnPointsSet();
         CreateZombiesPool();
-    }
-    private void Update()
-    {
-        SpawnZombieWithTimer(m_Timer -= Time.deltaTime);
-    }
-    private void SpawnZombieWithTimer(float timer)
-    {
-        if(m_Timer <= 0)
-        {
-            foreach (EnemySpawnChildScript script in _EnemySpawnChildScript)
-            {
-                if (script.CanSpawnPool == false)   //IK GA ETEN HALEN EN KOFFIE
-                {
-                    print(script);
-                    script.CanSpawnPool = true;
-                    m_Timer = 5;
-                    return;
-                }
-            }
-        }
     }
     private void OnTriggerEnter(Collider coll)
     {
@@ -51,7 +29,7 @@ public class EnemySpawnScript : MonoBehaviour
         {
             foreach (EnemySpawnChildScript enemySpawnChildScript in _EnemySpawnChildScript)
             {
-                enemySpawnChildScript.CanSpawnCollider = true;
+                enemySpawnChildScript.SetCanSpawn = true;
             }
         }
     }
@@ -61,7 +39,7 @@ public class EnemySpawnScript : MonoBehaviour
         {
             foreach (EnemySpawnChildScript enemySpawnChildScript in _EnemySpawnChildScript)
             {
-                enemySpawnChildScript.CanSpawnCollider = false;
+                enemySpawnChildScript.SetCanSpawn = false;
             }
         }
     }
