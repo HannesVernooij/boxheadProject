@@ -8,9 +8,9 @@ public class EnemySpawnChildScript : MonoBehaviour
 
     public EnemySpawnScript GetEnemySpawnScript { get { return _EnemySpawnScript; } }
     public State State { get { return m_State; } set { m_State = value; } }
-    public GameObject SetPlayer { set {m_Player = value;} }
+    public GameObject Player { get { return m_Player; } set { m_Player = value; } }
     public bool SetCanSpawn { set { m_CanSpawn = value; } }
-    
+
     private State m_State;
     private GameObject m_Player;
     private bool m_CanSpawn;
@@ -24,10 +24,13 @@ public class EnemySpawnChildScript : MonoBehaviour
     }
     private void OnTriggerStay(Collider coll)
     {
-        if (m_CanSpawn == true && coll.gameObject == m_Player && _EnemySpawnScript.GetZombieSpawnLimit >= 0)
+        if (m_State != null && m_CanSpawn == true && coll.gameObject == m_Player && _EnemySpawnScript.GetZombieSpawnLimit >= 0)
         {
             m_State.OnTriggerStay();
+            print(transform.name + " " + coll.gameObject.transform.parent);
+
         }
+
     }
 }
 public interface State
@@ -42,7 +45,7 @@ public class SpawnAllowed : State
     private EnemySpawnChildScript spawn;
     private Transform transform;
     private float timer = 0;
-    public SpawnAllowed(EnemySpawnChildScript enemySpawnChildScript,Transform parentTransform)
+    public SpawnAllowed(EnemySpawnChildScript enemySpawnChildScript, Transform parentTransform)
     {
         spawn = enemySpawnChildScript;
         transform = parentTransform;
@@ -68,12 +71,13 @@ public class SpawnAllowed : State
     }
     private void SpawnZombie()
     {
-        foreach(GameObject go in spawn.GetEnemySpawnScript.GetZombies)
+        foreach (GameObject go in spawn.GetEnemySpawnScript.GetZombies)
         {
-            if(go.activeSelf == false)
+            if (go.activeSelf == false)
             {
                 go.SetActive(true);
                 go.transform.position = transform.position;
+                go.GetComponent<ZombieScript>().SetTargetPlayer = spawn.Player;
                 return;
             }
         }
