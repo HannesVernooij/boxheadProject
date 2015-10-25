@@ -44,7 +44,7 @@ public class SpawnAllowed : State
 {
     private EnemySpawnChildScript spawn;
     private Transform transform;
-    private float timer = 0;
+    private float timer = 10;
     public SpawnAllowed(EnemySpawnChildScript enemySpawnChildScript, Transform parentTransform)
     {
         spawn = enemySpawnChildScript;
@@ -66,7 +66,7 @@ public class SpawnAllowed : State
         {
             SpawnZombie();
             spawn.GetEnemySpawnScript.GetZombieSpawnLimit -= 1;
-            timer = 2;
+            timer = 10;
         }
     }
     private void SpawnZombie()

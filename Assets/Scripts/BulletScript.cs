@@ -33,10 +33,15 @@ public class BulletScript : PoolableObjects
         {
             Deactivate();
         }
-        else if(collision.collider.tag == "Player")
+        else if (collision.collider.tag == "Player")
         {
             Debug.Log("HIT PLAYER");
             collision.collider.GetComponent<PlayerScript>().HP -= _damage;
+            Deactivate();
+        }
+        else if (collision.collider.tag == "Zombie")
+        {
+            collision.collider.GetComponent<ZombieScript>().HP -= _damage;
             Deactivate();
         }
     }

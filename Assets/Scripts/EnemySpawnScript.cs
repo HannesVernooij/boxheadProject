@@ -16,7 +16,7 @@ public class EnemySpawnScript : MonoBehaviour
     private EnemySpawnChildScript[] _EnemySpawnChildScript;
     private GameObject m_ZombiesEmtyGameObjectParent;
     private GameObject[] zombies;
-    private int m_ZombieSpawnLimit = 30;
+    private int m_ZombieSpawnLimit = 5;
 
     private void Start()
     {

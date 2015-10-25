@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\PoolableObjects.cs" />
      <Compile Include="Assets\Scripts\StartScript.cs" />
      <Compile Include="Assets\Scripts\UIScript.cs" />
+     <Compile Include="Assets\Scripts\ZombieScript.cs" />
      <Compile Include="Assets\Scripts\temPAI.cs" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
