@@ -17,13 +17,15 @@ public class ZombieScript : MonoBehaviour
     private void Start()
     {
         m_NMA = GetComponent<NavMeshAgent>();
+        m_NMA.enabled = true;
     }
 
     private void Update()
     {
         m_NMA.SetDestination(m_TargetPlayer.transform.position);
-        if(_hp <= 0)
+        if (_hp <= 0)
         {
+            m_NMA.enabled = false;
             gameObject.SetActive(false);
         }
     }
