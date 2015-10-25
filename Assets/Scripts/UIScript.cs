@@ -46,6 +46,7 @@ public class UIScript : MonoBehaviour
                 else if (_MovePlayerScript.GetSelectedGun[i].tag == "Shotgun")
                 {
                     _amountOfShotgunAmmo[i].text = _MovePlayerScript.GetSelectedGun[i].AmmoInClip().ToString() + " / " + _MovePlayerScript.GetSelectedGun[i].FullClips().ToString() + " Player " + (i+1);
+                    //Debug.Log("-------> " + _MovePlayerScript.GetSelectedGun[i].AmmoInClip().ToString());
                 }
                 else if (_MovePlayerScript.GetSelectedGun[i].tag == "Smg")
                 {

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 public class MovePlayerScript : MonoBehaviour
 {
+    [SerializeField]
+    private UIScript _uiScript;
     public float slowingDownSpeed;
     private Camera[] _playerCameras;
     private float defaultSlowingDownSpeed;
@@ -88,7 +90,6 @@ public class MovePlayerScript : MonoBehaviour
         if (Input.GetButtonDown("Player0_Y")) // switch guns
         {
             int other;
-            Debug.Log(_selectedGun[0] + " " + _currentPlayerGuns[0, selectedGunCounter]);
 
             other = (selectedGunCounter == 0 ? 1 : 0);
 
@@ -102,15 +103,12 @@ public class MovePlayerScript : MonoBehaviour
             }
             selectedGunCounter = other;
             _selectedGun[0] = _currentPlayerGuns[0, selectedGunCounter];
-            Debug.Log(selectedGunCounter);
         }
         if (Input.GetButtonDown("Player0_B") && _selectedGun[0] != null) // delete selected gun
         {
             Destroy(_selectedGun[0].gameObject);
             _selectedGun[0] = null;
             selectedGunCounter = (selectedGunCounter++) % 2;
-            Debug.Log(selectedGunCounter);
-            Debug.Log(CurrentPlayerGuns[0, selectedGunCounter]);
         }
     }
 
@@ -125,17 +123,30 @@ public class MovePlayerScript : MonoBehaviour
         {
             _selectedGun[1].Shoot();
         }
-        if (Input.GetButtonDown("Player1_Y"))
-        {
-            int other = (selectedGunCounter == 0 ? 1 : 0);
 
+        if (Input.GetButtonDown("Player1_Y")) // switch guns
+        {
+            int other;
+
+            other = (selectedGunCounter == 0 ? 1 : 0);
+
+            if (_selectedGun[1] != null)
+            {
+                _selectedGun[1].gameObject.SetActive(false);
+            }
             if (_currentPlayerGuns[1, other] != null)
             {
                 _currentPlayerGuns[1, other].gameObject.SetActive(true);
-                _selectedGun[1].gameObject.SetActive(false);
-                selectedGunCounter = other;
-                _selectedGun[1] = _currentPlayerGuns[1, selectedGunCounter];
             }
+            selectedGunCounter = other;
+            _selectedGun[1] = _currentPlayerGuns[1, selectedGunCounter];
+        }
+
+        if (Input.GetButtonDown("Player1_B") && _selectedGun[1] != null) // delete selected gun
+        {
+            Destroy(_selectedGun[1].gameObject);
+            _selectedGun[1] = null;
+            selectedGunCounter = (selectedGunCounter++) % 2;
         }
     }
 
@@ -150,17 +161,30 @@ public class MovePlayerScript : MonoBehaviour
         {
             _selectedGun[2].Shoot();
         }
-        if (Input.GetButtonDown("Player2_Y"))
-        {
-            int other = (selectedGunCounter == 0 ? 1 : 0);
 
+        if (Input.GetButtonDown("Player2_Y")) // switch guns
+        {
+            int other;
+
+            other = (selectedGunCounter == 0 ? 1 : 0);
+
+            if (_selectedGun[2] != null)
+            {
+                _selectedGun[2].gameObject.SetActive(false);
+            }
             if (_currentPlayerGuns[2, other] != null)
             {
                 _currentPlayerGuns[2, other].gameObject.SetActive(true);
-                _selectedGun[2].gameObject.SetActive(false);
-                selectedGunCounter = other;
-                _selectedGun[2] = _currentPlayerGuns[2, selectedGunCounter];
             }
+            selectedGunCounter = other;
+            _selectedGun[2] = _currentPlayerGuns[2, selectedGunCounter];
+        }
+
+        if (Input.GetButtonDown("Player2_B") && _selectedGun[2] != null) // delete selected gun
+        {
+            Destroy(_selectedGun[2].gameObject);
+            _selectedGun[2] = null;
+            selectedGunCounter = (selectedGunCounter++) % 2;
         }
     }
 
@@ -176,17 +200,29 @@ public class MovePlayerScript : MonoBehaviour
         {
             _selectedGun[3].Shoot();
         }
-        if (Input.GetButtonDown("Player3_Y"))
+        if (Input.GetButtonDown("Player3_Y")) // switch guns
         {
-            int other = (selectedGunCounter == 0 ? 1 : 0);
+            int other;
 
+            other = (selectedGunCounter == 0 ? 1 : 0);
+
+            if (_selectedGun[3] != null)
+            {
+                _selectedGun[3].gameObject.SetActive(false);
+            }
             if (_currentPlayerGuns[3, other] != null)
             {
                 _currentPlayerGuns[3, other].gameObject.SetActive(true);
-                _selectedGun[3].gameObject.SetActive(false);
-                selectedGunCounter = other;
-                _selectedGun[3] = _currentPlayerGuns[3, selectedGunCounter];
             }
+            selectedGunCounter = other;
+            _selectedGun[3] = _currentPlayerGuns[3, selectedGunCounter];
+        }
+
+        if (Input.GetButtonDown("Player3_B") && _selectedGun[3] != null) // delete selected gun
+        {
+            Destroy(_selectedGun[3].gameObject);
+            _selectedGun[3] = null;
+            selectedGunCounter = (selectedGunCounter++) % 2;
         }
     }
 

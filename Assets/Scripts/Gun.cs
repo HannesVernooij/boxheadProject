@@ -61,9 +61,9 @@ public class Gun : MonoBehaviour
     }
     void Update()
     {
-        if(_damage != 0)
+        if(gameObject.tag == "Shotgun")
         {
-            //Debug.Log(_damage);
+            Debug.Log(_ammo);
         }
         if (_remainingDelay >= 0)
         {
@@ -79,7 +79,6 @@ public class Gun : MonoBehaviour
 
     public void Shoot()
     {
-        Debug.Log("Shooting " + _damage);
         if (_remainingDelay <= 0 && _ammo > 0)
         {
             _bulletPool.CreateObject(_gunPivotObject.transform.position, _gunPivotObject.transform.rotation, _damage, gameObject.tag);
