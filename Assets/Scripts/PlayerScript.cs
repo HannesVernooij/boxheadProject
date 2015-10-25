@@ -17,6 +17,7 @@ public class PlayerScript : MonoBehaviour
     private int _currentBoxes;
     private int _score = 0;
     private int _hp = 10;
+    private float _tempDamageCounter;
 
     public int HP
     {
@@ -138,6 +139,20 @@ public class PlayerScript : MonoBehaviour
                     Destroy(gunScript.gameObject.GetComponent<BoxCollider>());
                     break;
 
+            }
+        }
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        if(collision.collider.tag == "Zombie")
+        {
+            _tempDamageCounter += Time.deltaTime;
+
+            if(_tempDamageCounter > 1)
+            {
+                _hp--;
+                _tempDamageCounter = 0;
             }
         }
     }
