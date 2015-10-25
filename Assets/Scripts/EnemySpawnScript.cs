@@ -6,7 +6,7 @@ public class EnemySpawnScript : MonoBehaviour
     [SerializeField]
     private GameObject m_Player;
     [SerializeField]
-    private GameObject[] m_ZombiePrefabs,
+    private GameObject[] m_ZombieAssets,
                          m_ZombieSpawnPoints;
 
     public GameObject ZombiesParent { get { return m_ZombiesEmtyGameObjectParent; } set { m_ZombiesEmtyGameObjectParent = value; } }
@@ -54,7 +54,7 @@ public class EnemySpawnScript : MonoBehaviour
         {
             temp[i] = transform.GetChild(i).gameObject;
             _EnemySpawnChildScript[i] = temp[i].AddComponent<EnemySpawnChildScript>();
-            _EnemySpawnChildScript[i].Player = GettingTheChildSpawnZombieArea;
+            _EnemySpawnChildScript[i].SetPlayer = GettingTheChildSpawnZombieArea;
         }
         return temp;
     }
@@ -66,11 +66,24 @@ public class EnemySpawnScript : MonoBehaviour
         zombies = new GameObject[m_ZombieSpawnLimit];
         for (int i = 0; i < m_ZombieSpawnLimit; i++)
         {
-            int r = Random.Range(0, 3);
-            zombies[i] = Instantiate(m_ZombiePrefabs[r], new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+            zombies[i] = new GameObject("zombie" + i);
             zombies[i].transform.SetParent(zombiesParent.transform);
+            AddingComponentsToZombies(zombies[i]);
             zombies[i].SetActive(false);
         }
+    }
+    private void AddingComponentsToZombies(GameObject zombie)
+    {
+        int r = Random.Range(0, 3);
+        GameObject randomZombieAsset = m_ZombieAssets[r];
+
+        MeshFilter MF = zombie.AddComponent<MeshFilter>();
+        MeshRenderer MR = zombie.AddComponent<MeshRenderer>();
+
+        MF.mesh = randomZombieAsset.GetComponent<MeshFilter>().sharedMesh;
+        MR.material = randomZombieAsset.GetComponent<MeshRenderer>().sharedMaterial;
+
+        zombie.transform.rotation = randomZombieAsset.transform.rotation;
     }
     //
 }
