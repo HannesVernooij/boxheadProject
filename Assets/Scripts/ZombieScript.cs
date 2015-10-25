@@ -11,6 +11,7 @@ public class ZombieScript : MonoBehaviour
     private void Start()
     {
         m_NMA = GetComponent<NavMeshAgent>();
+        m_NMA.enabled = true;
     }
 
     private void Update()
