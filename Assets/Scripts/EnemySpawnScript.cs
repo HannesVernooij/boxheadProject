@@ -18,7 +18,7 @@ public class EnemySpawnScript : MonoBehaviour
     private EnemySpawnChildScript[] _EnemySpawnChildScript;
     private GameObject m_ZombiesEmtyGameObjectParent;
     private GameObject[] zombies;
-    private int m_ZombieSpawnLimit = 2;
+    private int m_ZombieSpawnLimit = 3;
 
     private void Start()
     {
@@ -35,9 +35,8 @@ public class EnemySpawnScript : MonoBehaviour
         {
             foreach (EnemySpawnChildScript script in _EnemySpawnChildScript)
             {
-                if (script.CanSpawnPool == false)   //IK GA ETEN HALEN EN KOFFIE
+                if (script.CanSpawnPool == false)   
                 {
-                    print(script);
                     script.CanSpawnPool = true;
                     m_Timer = 5;
                     return;
