@@ -92,57 +92,6 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter(Collider collider)
-    {
-        if (collider.tag == "Pistol" || collider.tag == "Shotgun" || collider.tag == "Smg" || collider.tag == "Sniper")
-        {
-            _movePlayerScript.GetGun(gameObject, collider.GetComponent<Gun>(), 50, _id);
-            collider.transform.parent = _gunPositionObject.transform;
-            collider.transform.localPosition = Vector3.zero;
-            collider.transform.localRotation = Quaternion.Euler(270, 0, 0);//Quaternion.Euler(270, gameObject.transform.rotation.y, gameObject.transform.rotation.z);
-            Gun gunScript = collider.GetComponent<Gun>();
-            switch (collider.tag)
-            {
-                case "Pistol":
-                    gunScript.ClipSize = 6;
-                    gunScript.ShootDelay = 1f;
-                    gunScript.ReloadSpeed = 2f;
-                    gunScript.Ammo(Random.Range(12, 50));
-                    gunScript.Damage = 2;
-                    Destroy(gunScript.gameObject.GetComponent<BoxCollider>());
-                    break;
-
-                case "Shotgun":
-                    gunScript.ClipSize = 2;
-                    gunScript.ShootDelay = 0.5f;
-                    gunScript.ReloadSpeed = 4f;
-                    gunScript.Ammo(Random.Range(6, 20));
-                    gunScript.Damage = 3;
-                    Destroy(gunScript.gameObject.GetComponent<BoxCollider>());
-                    break;
-
-                case "Smg":
-                    gunScript.ClipSize = 30;
-                    gunScript.ShootDelay = 0.2f;
-                    gunScript.ReloadSpeed = 3.5f;
-                    gunScript.Ammo(Random.Range(30, 90));
-                    gunScript.Damage = 1;
-                    Destroy(gunScript.gameObject.GetComponent<BoxCollider>());
-                    break;
-
-                case "Sniper":
-                    gunScript.ClipSize = 6;
-                    gunScript.ShootDelay = 2f;
-                    gunScript.ReloadSpeed = 3.5f;
-                    gunScript.Ammo(Random.Range(6, 20));
-                    gunScript.Damage = 9;
-                    Destroy(gunScript.gameObject.GetComponent<BoxCollider>());
-                    break;
-
-            }
-        }
-    }
-
     void OnCollisionStay(Collision collision)
     {
         if(collision.collider.tag == "Zombie")
