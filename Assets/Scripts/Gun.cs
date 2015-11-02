@@ -14,10 +14,17 @@ public class Gun : MonoBehaviour
     private float _remainingDelay;
     private float _reloadSpeed;
     private int _damage = 0;
+    public string _tag;
+    public SoundSystem _soundScript;
+
+    public string WeaponTag
+    {
+        set { _tag = value; }
+    }
 
     public int Damage
     {
-        set { _damage = value;}
+        set { _damage = value; }
     }
 
     public float ReloadSpeed
@@ -35,13 +42,15 @@ public class Gun : MonoBehaviour
     }
     public int ClipSize
     {
-        set { _clipSize = value+1; }
+        set { _clipSize = value + 1; }
     }
 
     void Start()
     {
+        Debug.Log("OMG YOU CREATED ME");
         _gunPivotObject = transform.Find("ShootPivot").gameObject;
         _bulletPool = GameObject.Find("BulletPool").GetComponent<Pool>();
+        _soundScript = GameObject.Find("SoundsParent").GetComponent<SoundSystem>();
     }
 
     public void Ammo(int value)
@@ -61,11 +70,12 @@ public class Gun : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(_tag);
         if (_remainingDelay >= 0)
         {
             _remainingDelay -= Time.deltaTime;
         }
-        if(_ammoInClip == 0 && _amountOfFullClips > 0)
+        if (_ammoInClip == 0 && _amountOfFullClips > 0)
         {
             _remainingDelay += _reloadSpeed;
             _ammo--;
@@ -77,6 +87,7 @@ public class Gun : MonoBehaviour
     {
         if (_remainingDelay <= 0 && _ammo > 0)
         {
+            _soundScript.Shoot(0, _tag);
             _bulletPool.CreateObject(_gunPivotObject.transform.position, _gunPivotObject.transform.rotation, _damage, gameObject.tag);
             _ammo--;
             CalculateAmmo();

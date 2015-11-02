@@ -35,8 +35,8 @@ public class StartScript : MonoBehaviour
     {
         for (int i = 0; i < _amountOfPlayers; i++)
         {
-            _playerCameras[i].transform.position = new Vector3(_players[i].transform.position.x, 3, _players[i].transform.position.z);
-            _playerCameras[i].transform.LookAt(_players[i].transform);
+            //_playerCameras[i].transform.position = new Vector3(_players[i].transform.position.x, 3, _players[i].transform.position.z);
+            //_playerCameras[i].transform.LookAt(_players[i].transform);
         }
     }
 

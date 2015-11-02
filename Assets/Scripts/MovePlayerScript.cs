@@ -17,6 +17,8 @@ public class MovePlayerScript : MonoBehaviour
     private Gun[] _currentPlayer3Guns = new Gun[4];
     [SerializeField]
     private Gun[] _currentPlayer4Guns = new Gun[4];
+    [SerializeField]
+    private SoundSystem _soundScript;
     private Gun[,] _currentPlayerGuns = new Gun[4, 4];
     private Gun[] _selectedGun = new Gun[4];
     private int _amountOfPlayers = 0;
@@ -25,6 +27,7 @@ public class MovePlayerScript : MonoBehaviour
     GameObject LookAtGameObject1;
     GameObject LookAtGameObject2;
     GameObject LookAtGameObject3;
+    bool tempthingy = true;
     int _damage = 0;
     int[] _selectedGunCounter = new int[4] { 0, 0, 0, 0 };
 
@@ -63,6 +66,7 @@ public class MovePlayerScript : MonoBehaviour
         LookAtGameObject2 = GameObject.FindGameObjectWithTag("LookAtCube2");
         LookAtGameObject3 = GameObject.FindGameObjectWithTag("LookAtCube3");
 
+
         for (int i = 0; i < 4; i++)
         {
             _currentPlayerGuns[0, i] = _currentPlayer1Guns[i];
@@ -73,51 +77,20 @@ public class MovePlayerScript : MonoBehaviour
 
         defaultSlowingDownSpeed = slowingDownSpeed;
 
-        for (int i = 0; i < 4; i++)
-        {
-            for (int i2 = 0; i2 < 4; i2++)
-            {
-                if (_currentPlayerGuns[i, i2].gameObject.tag == "Pistol")
-                {
-                    _currentPlayerGuns[i, i2].ClipSize = 6;
-                    _currentPlayerGuns[i, i2].ReloadSpeed = 0.4f;
-                    _currentPlayerGuns[i, i2].ShootDelay = 0.2f;
-                    _currentPlayerGuns[i, i2].Damage = 1;
-                    _currentPlayerGuns[i, i2].Ammo(Random.Range(12, 50));
-                    _selectedGun[i] = _currentPlayerGuns[i, i2];
-                }
-                if (_currentPlayerGuns[i, i2].gameObject.tag == "Shotgun")
-                {
-                    _currentPlayerGuns[i, i2].ClipSize = 6;
-                    _currentPlayerGuns[i, i2].ReloadSpeed = 0.5f;
-                    _currentPlayerGuns[i, i2].ShootDelay = 0.2f;
-                    _currentPlayerGuns[i, i2].Damage = 1;
-                    _currentPlayerGuns[i, i2].Ammo(Random.Range(6, 20));
-                }
-                if (_currentPlayerGuns[i, i2].gameObject.tag == "Smg")
-                {
-                    _currentPlayerGuns[i, i2].ClipSize = 30;
-                    _currentPlayerGuns[i, i2].ReloadSpeed = 0.5f;
-                    _currentPlayerGuns[i, i2].ShootDelay = 0.2f;
-                    _currentPlayerGuns[i, i2].Damage = 2;
-                    _currentPlayerGuns[i, i2].Ammo(Random.Range(30, 90));
-                }
-                if (_currentPlayerGuns[i, i2].gameObject.tag == "Sniper")
-                {
-                    _currentPlayerGuns[i, i2].ClipSize = 6;
-                    _currentPlayerGuns[i, i2].ReloadSpeed = 0.5f;
-                    _currentPlayerGuns[i, i2].ShootDelay = 0.3f;
-                    _currentPlayerGuns[i, i2].Damage = 9;
-                    _currentPlayerGuns[i, i2].Ammo(Random.Range(6, 20));
-                }
-            }
-        }
+
+        Debug.Log(_currentPlayerGuns);
 
         //_uiScript.UpdateValues();  //ToDo
     }
 
     void FixedUpdate()
     {
+        if (tempthingy == true)
+        {
+            setGunAudioScriptAfterMonoBehavioursFuckedUpVariableRemoval();
+            tempthingy = false;
+        }
+
         switch (_gamestate)
         {
             case 1:
@@ -131,7 +104,53 @@ public class MovePlayerScript : MonoBehaviour
         }
     }
 
-
+    private void setGunAudioScriptAfterMonoBehavioursFuckedUpVariableRemoval()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int i2 = 0; i2 < 4; i2++)
+            {
+                Debug.Log("SETTHINHG SHIT");
+                if (_currentPlayerGuns[i, i2].gameObject.tag == "Pistol")
+                {
+                    _currentPlayerGuns[i, i2].ClipSize = 6;
+                    _currentPlayerGuns[i, i2].ReloadSpeed = 0.4f;
+                    _currentPlayerGuns[i, i2].ShootDelay = 0.2f;
+                    _currentPlayerGuns[i, i2].Damage = 1;
+                    _currentPlayerGuns[i, i2].Ammo(Random.Range(12, 50));
+                    _currentPlayerGuns[i, i2]._tag = "Pistol";
+                    _selectedGun[i] = _currentPlayerGuns[i, i2];
+                }
+                if (_currentPlayerGuns[i, i2].gameObject.tag == "Shotgun")
+                {
+                    _currentPlayerGuns[i, i2].ClipSize = 6;
+                    _currentPlayerGuns[i, i2].ReloadSpeed = 0.5f;
+                    _currentPlayerGuns[i, i2].ShootDelay = 0.2f;
+                    _currentPlayerGuns[i, i2].Damage = 1;
+                    _currentPlayerGuns[i, i2].Ammo(Random.Range(6, 20));
+                    _currentPlayerGuns[i, i2]._tag = "Shotgun";
+                }
+                if (_currentPlayerGuns[i, i2].gameObject.tag == "Smg")
+                {
+                    _currentPlayerGuns[i, i2].ClipSize = 30;
+                    _currentPlayerGuns[i, i2].ReloadSpeed = 0.5f;
+                    _currentPlayerGuns[i, i2].ShootDelay = 0.2f;
+                    _currentPlayerGuns[i, i2].Damage = 2;
+                    _currentPlayerGuns[i, i2].Ammo(Random.Range(30, 90));
+                    _currentPlayerGuns[i, i2]._tag = "Smg";
+                }
+                if (_currentPlayerGuns[i, i2].gameObject.tag == "Sniper")
+                {
+                    _currentPlayerGuns[i, i2].ClipSize = 6;
+                    _currentPlayerGuns[i, i2].ReloadSpeed = 0.5f;
+                    _currentPlayerGuns[i, i2].ShootDelay = 0.3f;
+                    _currentPlayerGuns[i, i2].Damage = 9;
+                    _currentPlayerGuns[i, i2].Ammo(Random.Range(6, 20));
+                    _currentPlayerGuns[i, i2]._tag = "Sniper";
+                }
+            }
+        }
+    }
 
 
     private void Player1Movement(float playerH = 0, float playerV = 0, float playerH2 = 0, float playerV2 = 0)

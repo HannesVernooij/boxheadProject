@@ -22,20 +22,20 @@ public class SoundSystem : MonoBehaviour
         }
     }
 
-    public void Shoot(int player, int gun)
+    public void Shoot(int player, string gunTag)
     {
-        switch (gun)
+        switch (gunTag)
         {
-            case 0://Pistol
+            case "Pistol":
                 ShootPistol(player);
                 break;
-            case 1://Shotgun
+            case "Shotgun":
                 ShootShotgun(player);
                 break;
-            case 2://AK
+            case "Smg":
                 ShootAK(player);
                 break;
-            case 3://Sniper
+            case "Sniper":
                 ShootSniper(player);
                 break;
         }

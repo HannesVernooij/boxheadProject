@@ -93,7 +93,6 @@ public class PlayerScript : MonoBehaviour
     }
     void OnTriggerEnter(Collider collider)
     {
-        Debug.Log(collider.tag);
         if (collider.tag == "Pistol")
         {
             _movePlayerScript.CurrentPlayerGuns[_id, 0].Ammo(Random.Range(12, 50));
