@@ -15,6 +15,7 @@ public class Gun : MonoBehaviour
     private float _reloadSpeed;
     private int _damage = 0;
     public string _tag;
+    public int _id;
     public SoundSystem _soundScript;
 
     public string WeaponTag
@@ -77,6 +78,7 @@ public class Gun : MonoBehaviour
         }
         if (_ammoInClip == 0 && _amountOfFullClips > 0)
         {
+            _soundScript.Reload(_id, _tag);
             _remainingDelay += _reloadSpeed;
             _ammo--;
             CalculateAmmo();
@@ -87,7 +89,7 @@ public class Gun : MonoBehaviour
     {
         if (_remainingDelay <= 0 && _ammo > 0)
         {
-            _soundScript.Shoot(0, _tag);
+            _soundScript.Reload(_id, _tag);
             _bulletPool.CreateObject(_gunPivotObject.transform.position, _gunPivotObject.transform.rotation, _damage, gameObject.tag);
             _ammo--;
             CalculateAmmo();

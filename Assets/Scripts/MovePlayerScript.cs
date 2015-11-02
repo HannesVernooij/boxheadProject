@@ -119,6 +119,7 @@ public class MovePlayerScript : MonoBehaviour
                     _currentPlayerGuns[i, i2].Damage = 1;
                     _currentPlayerGuns[i, i2].Ammo(Random.Range(12, 50));
                     _currentPlayerGuns[i, i2]._tag = "Pistol";
+                    _currentPlayerGuns[i, i2]._id = i;
                     _selectedGun[i] = _currentPlayerGuns[i, i2];
                 }
                 if (_currentPlayerGuns[i, i2].gameObject.tag == "Shotgun")
@@ -129,6 +130,7 @@ public class MovePlayerScript : MonoBehaviour
                     _currentPlayerGuns[i, i2].Damage = 1;
                     _currentPlayerGuns[i, i2].Ammo(Random.Range(6, 20));
                     _currentPlayerGuns[i, i2]._tag = "Shotgun";
+                    _currentPlayerGuns[i, i2]._id = i;
                 }
                 if (_currentPlayerGuns[i, i2].gameObject.tag == "Smg")
                 {
@@ -138,6 +140,7 @@ public class MovePlayerScript : MonoBehaviour
                     _currentPlayerGuns[i, i2].Damage = 2;
                     _currentPlayerGuns[i, i2].Ammo(Random.Range(30, 90));
                     _currentPlayerGuns[i, i2]._tag = "Smg";
+                    _currentPlayerGuns[i, i2]._id = i;
                 }
                 if (_currentPlayerGuns[i, i2].gameObject.tag == "Sniper")
                 {
@@ -147,6 +150,7 @@ public class MovePlayerScript : MonoBehaviour
                     _currentPlayerGuns[i, i2].Damage = 9;
                     _currentPlayerGuns[i, i2].Ammo(Random.Range(6, 20));
                     _currentPlayerGuns[i, i2]._tag = "Sniper";
+                    _currentPlayerGuns[i, i2]._id = i;
                 }
             }
         }
