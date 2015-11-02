@@ -89,7 +89,7 @@ public class Gun : MonoBehaviour
     {
         if (_remainingDelay <= 0 && _ammo > 0)
         {
-            _soundScript.Reload(_id, _tag);
+            _soundScript.Shoot(_id, _tag);
             _bulletPool.CreateObject(_gunPivotObject.transform.position, _gunPivotObject.transform.rotation, _damage, gameObject.tag);
             _ammo--;
             CalculateAmmo();

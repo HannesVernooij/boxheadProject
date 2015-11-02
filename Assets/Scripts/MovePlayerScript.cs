@@ -31,6 +31,10 @@ public class MovePlayerScript : MonoBehaviour
     int _damage = 0;
     int[] _selectedGunCounter = new int[4] { 0, 0, 0, 0 };
 
+    int _totalAmountOfBoxes = 10;
+    [SerializeField]
+    private ParticleSystem _boxCollectParticles;
+
     public Gun[,] CurrentPlayerGuns
     {
         set { _currentPlayerGuns = value; }
@@ -256,5 +260,21 @@ public class MovePlayerScript : MonoBehaviour
             _currentPlayerGuns[i, 2].GetComponent<Renderer>().material.color = Color.blue;
             _currentPlayerGuns[i, 3].GetComponent<Renderer>().material.color = Color.yellow;
         }
+    }
+
+    public int GetBox()
+    {
+        if (_totalAmountOfBoxes > 0) return 1;
+        else
+        {
+            _boxCollectParticles.enableEmission = false;
+            return 0;
+        }
+    }
+
+    public void AddBox(int value)
+    {
+        _totalAmountOfBoxes += value;
+        _boxCollectParticles.enableEmission = false;
     }
 }
