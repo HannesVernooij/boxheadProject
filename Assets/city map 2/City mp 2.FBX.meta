@@ -1,0 +1,1855 @@
+fileFormatVersion: 2
+guid: 6d63d95a8cde0144185d6d6f0e0d28ed
+timeCreated: 1446190252
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Box001
+    100002: Box001 1
+    100004: Box001 10
+    100006: Box001 2
+    100008: Box001 3
+    100010: Box001 4
+    100012: Box001 5
+    100014: Box001 6
+    100016: Box001 7
+    100018: Box001 8
+    100020: Box001 9
+    100022: Box002
+    100024: Box003
+    100026: Box004
+    100028: Box006
+    100030: Box010
+    100032: Box011
+    100034: Box012
+    100036: Box013
+    100038: Box014
+    100040: Box015
+    100042: Box016
+    100044: Box017
+    100046: Box018
+    100048: Box019
+    100050: Box020
+    100052: Box021
+    100054: Box022
+    100056: Box025
+    100058: Box028
+    100060: Box029
+    100062: Box030
+    100064: Box031
+    100066: Box032
+    100068: Box033
+    100070: Box034
+    100072: Box035
+    100074: Box036
+    100076: Box037
+    100078: Box038
+    100080: Box039
+    100082: Box040
+    100084: Box041
+    100086: Box042
+    100088: Box043
+    100090: Box044
+    100092: Box045
+    100094: Box046
+    100096: Box047
+    100098: Box048
+    100100: Box049
+    100102: Box050
+    100104: Box051
+    100106: Box052
+    100108: Box053
+    100110: Box054
+    100112: Box055
+    100114: Box056
+    100116: Box057
+    100118: Box058
+    100120: Box059
+    100122: Box060
+    100124: Box061
+    100126: Box062
+    100128: Box063
+    100130: Box065
+    100132: //RootNode
+    100134: Cylinder001
+    100136: Cylinder142
+    100138: lights
+    100140: lights01
+    100142: lights02
+    100144: lights03
+    100146: lights04
+    100148: lights05
+    100150: lights06
+    100152: lights07
+    100154: lights08
+    100156: lights09
+    100158: lights10
+    100160: lights11
+    100162: lights12
+    100164: lights13
+    100166: lights14
+    100168: lights15
+    100170: lights16
+    100172: lights17
+    100174: lights18
+    100176: lights19
+    100178: lights20
+    100180: lights21
+    100182: lights22
+    100184: lights23
+    100186: lights24
+    100188: lights25
+    100190: lights26
+    100192: lights27
+    100194: lights28
+    100196: lights29
+    100198: lights30
+    100200: lights31
+    100202: lights32
+    100204: lights33
+    100206: lights34
+    100208: lights35
+    100210: lights36
+    100212: lights37
+    100214: lights38
+    100216: lights39
+    100218: lights40
+    100220: lights41
+    100222: lights42
+    100224: lights43
+    100226: lights44
+    100228: lights45
+    100230: lights46
+    100232: lights47
+    100234: lights48
+    100236: lights49
+    100238: lights50
+    100240: lights51
+    100242: lights52
+    100244: lights53
+    100246: lights54
+    100248: lights55
+    100250: lights56
+    100252: lights57
+    100254: lights58
+    100256: lights59
+    100258: lights60
+    100260: lights61
+    100262: lights62
+    100264: lights63
+    100266: lights64
+    100268: lights65
+    100270: lights66
+    100272: lights67
+    100274: lights68
+    100276: lights69
+    100278: lights70
+    100280: lights71
+    100282: lights72
+    100284: lights73
+    100286: lights74
+    100288: lights75
+    100290: lights76
+    100292: lights77
+    100294: lights78
+    100296: lights79
+    100298: lights80
+    100300: military wall
+    100302: military wall01
+    100304: military wall02
+    100306: military wall03
+    100308: military wall04
+    100310: military wall045
+    100312: military wall046
+    100314: military wall047
+    100316: military wall048
+    100318: military wall049
+    100320: military wall05
+    100322: military wall050
+    100324: military wall051
+    100326: military wall052
+    100328: military wall053
+    100330: military wall054
+    100332: military wall055
+    100334: military wall056
+    100336: military wall057
+    100338: military wall058
+    100340: military wall059
+    100342: military wall06
+    100344: military wall060
+    100346: military wall061
+    100348: military wall062
+    100350: military wall063
+    100352: military wall064
+    100354: military wall065
+    100356: military wall066
+    100358: military wall067
+    100360: military wall068
+    100362: military wall069
+    100364: military wall07
+    100366: military wall070
+    100368: military wall071
+    100370: military wall072
+    100372: military wall073
+    100374: military wall074
+    100376: military wall075
+    100378: military wall076
+    100380: military wall077
+    100382: military wall078
+    100384: military wall079
+    100386: military wall08
+    100388: military wall080
+    100390: military wall081
+    100392: military wall082
+    100394: military wall083
+    100396: military wall084
+    100398: military wall085
+    100400: military wall086
+    100402: military wall087
+    100404: military wall088
+    100406: military wall089
+    100408: military wall09
+    100410: military wall090
+    100412: military wall091
+    100414: military wall092
+    100416: military wall093
+    100418: military wall094
+    100420: military wall095
+    100422: military wall096
+    100424: military wall097
+    100426: military wall098
+    100428: military wall099
+    100430: military wall10
+    100432: military wall100
+    100434: military wall101
+    100436: military wall102
+    100438: military wall103
+    100440: military wall104
+    100442: military wall105
+    100444: military wall106
+    100446: military wall107
+    100448: military wall108
+    100450: military wall109
+    100452: military wall11
+    100454: military wall110
+    100456: military wall114
+    100458: military wall115
+    100460: military wall116
+    100462: military wall117
+    100464: military wall118
+    100466: military wall119
+    100468: military wall12
+    100470: military wall120
+    100472: military wall121
+    100474: military wall122
+    100476: military wall123
+    100478: military wall124
+    100480: military wall125
+    100482: military wall126
+    100484: military wall127
+    100486: military wall128
+    100488: military wall129
+    100490: military wall13
+    100492: military wall130
+    100494: military wall131
+    100496: military wall132
+    100498: military wall133
+    100500: military wall134
+    100502: military wall135
+    100504: military wall136
+    100506: military wall137
+    100508: military wall138
+    100510: military wall139
+    100512: military wall14
+    100514: military wall140
+    100516: military wall141
+    100518: military wall142
+    100520: military wall143
+    100522: military wall144
+    100524: military wall145
+    100526: military wall146
+    100528: military wall147
+    100530: military wall148
+    100532: military wall149
+    100534: military wall15
+    100536: military wall150
+    100538: military wall151
+    100540: military wall152
+    100542: military wall153
+    100544: military wall154
+    100546: military wall155
+    100548: military wall159
+    100550: military wall16
+    100552: military wall160
+    100554: military wall161
+    100556: military wall162
+    100558: military wall163
+    100560: military wall164
+    100562: military wall165
+    100564: military wall166
+    100566: military wall167
+    100568: military wall168
+    100570: military wall169
+    100572: military wall17
+    100574: military wall170
+    100576: military wall171
+    100578: military wall172
+    100580: military wall173
+    100582: military wall174
+    100584: military wall175
+    100586: military wall176
+    100588: military wall177
+    100590: military wall178
+    100592: military wall179
+    100594: military wall18
+    100596: military wall19
+    100598: military wall20
+    100600: military wall21
+    100602: military wall22
+    100604: military wall23
+    100606: military wall24
+    100608: military wall25
+    100610: military wall26
+    100612: military wall27
+    100614: military wall28
+    100616: military wall29
+    100618: military wall30
+    100620: military wall31
+    100622: military wall32
+    100624: military wall33
+    100626: military wall34
+    100628: military wall35
+    100630: military wall36
+    100632: military wall37
+    100634: military wall38
+    100636: military wall39
+    100638: military wall40
+    100640: military wall41
+    100642: military wall42
+    100644: military wall43
+    100646: military wall44
+    100648: Plane001
+    100650: Plane001 1
+    100652: Plane001 2
+    100654: Plane001 3
+    100656: Plane001 4
+    100658: Plane002
+    100660: Plane003
+    100662: Plane004
+    100664: Plane005
+    100666: Plane006
+    100668: Plane007
+    100670: Plane008
+    100672: Plane009
+    100674: Plane010
+    100676: Plane011
+    100678: Plane012
+    100680: Plane013
+    100682: Plane014
+    100684: Plane015
+    100686: Plane016
+    100688: Plane017
+    100690: Plane018
+    100692: Plane019
+    100694: Plane020
+    100696: Plane021
+    100698: Plane022
+    100700: Plane023
+    100702: Plane024
+    100704: Plane025
+    100706: Plane026
+    100708: Plane027
+    100710: Plane028
+    100712: Plane029
+    400000: Box001
+    400002: Box001 1
+    400004: Box001 10
+    400006: Box001 2
+    400008: Box001 3
+    400010: Box001 4
+    400012: Box001 5
+    400014: Box001 6
+    400016: Box001 7
+    400018: Box001 8
+    400020: Box001 9
+    400022: Box002
+    400024: Box003
+    400026: Box004
+    400028: Box006
+    400030: Box010
+    400032: Box011
+    400034: Box012
+    400036: Box013
+    400038: Box014
+    400040: Box015
+    400042: Box016
+    400044: Box017
+    400046: Box018
+    400048: Box019
+    400050: Box020
+    400052: Box021
+    400054: Box022
+    400056: Box025
+    400058: Box028
+    400060: Box029
+    400062: Box030
+    400064: Box031
+    400066: Box032
+    400068: Box033
+    400070: Box034
+    400072: Box035
+    400074: Box036
+    400076: Box037
+    400078: Box038
+    400080: Box039
+    400082: Box040
+    400084: Box041
+    400086: Box042
+    400088: Box043
+    400090: Box044
+    400092: Box045
+    400094: Box046
+    400096: Box047
+    400098: Box048
+    400100: Box049
+    400102: Box050
+    400104: Box051
+    400106: Box052
+    400108: Box053
+    400110: Box054
+    400112: Box055
+    400114: Box056
+    400116: Box057
+    400118: Box058
+    400120: Box059
+    400122: Box060
+    400124: Box061
+    400126: Box062
+    400128: Box063
+    400130: Box065
+    400132: //RootNode
+    400134: Cylinder001
+    400136: Cylinder142
+    400138: lights
+    400140: lights01
+    400142: lights02
+    400144: lights03
+    400146: lights04
+    400148: lights05
+    400150: lights06
+    400152: lights07
+    400154: lights08
+    400156: lights09
+    400158: lights10
+    400160: lights11
+    400162: lights12
+    400164: lights13
+    400166: lights14
+    400168: lights15
+    400170: lights16
+    400172: lights17
+    400174: lights18
+    400176: lights19
+    400178: lights20
+    400180: lights21
+    400182: lights22
+    400184: lights23
+    400186: lights24
+    400188: lights25
+    400190: lights26
+    400192: lights27
+    400194: lights28
+    400196: lights29
+    400198: lights30
+    400200: lights31
+    400202: lights32
+    400204: lights33
+    400206: lights34
+    400208: lights35
+    400210: lights36
+    400212: lights37
+    400214: lights38
+    400216: lights39
+    400218: lights40
+    400220: lights41
+    400222: lights42
+    400224: lights43
+    400226: lights44
+    400228: lights45
+    400230: lights46
+    400232: lights47
+    400234: lights48
+    400236: lights49
+    400238: lights50
+    400240: lights51
+    400242: lights52
+    400244: lights53
+    400246: lights54
+    400248: lights55
+    400250: lights56
+    400252: lights57
+    400254: lights58
+    400256: lights59
+    400258: lights60
+    400260: lights61
+    400262: lights62
+    400264: lights63
+    400266: lights64
+    400268: lights65
+    400270: lights66
+    400272: lights67
+    400274: lights68
+    400276: lights69
+    400278: lights70
+    400280: lights71
+    400282: lights72
+    400284: lights73
+    400286: lights74
+    400288: lights75
+    400290: lights76
+    400292: lights77
+    400294: lights78
+    400296: lights79
+    400298: lights80
+    400300: military wall
+    400302: military wall01
+    400304: military wall02
+    400306: military wall03
+    400308: military wall04
+    400310: military wall045
+    400312: military wall046
+    400314: military wall047
+    400316: military wall048
+    400318: military wall049
+    400320: military wall05
+    400322: military wall050
+    400324: military wall051
+    400326: military wall052
+    400328: military wall053
+    400330: military wall054
+    400332: military wall055
+    400334: military wall056
+    400336: military wall057
+    400338: military wall058
+    400340: military wall059
+    400342: military wall06
+    400344: military wall060
+    400346: military wall061
+    400348: military wall062
+    400350: military wall063
+    400352: military wall064
+    400354: military wall065
+    400356: military wall066
+    400358: military wall067
+    400360: military wall068
+    400362: military wall069
+    400364: military wall07
+    400366: military wall070
+    400368: military wall071
+    400370: military wall072
+    400372: military wall073
+    400374: military wall074
+    400376: military wall075
+    400378: military wall076
+    400380: military wall077
+    400382: military wall078
+    400384: military wall079
+    400386: military wall08
+    400388: military wall080
+    400390: military wall081
+    400392: military wall082
+    400394: military wall083
+    400396: military wall084
+    400398: military wall085
+    400400: military wall086
+    400402: military wall087
+    400404: military wall088
+    400406: military wall089
+    400408: military wall09
+    400410: military wall090
+    400412: military wall091
+    400414: military wall092
+    400416: military wall093
+    400418: military wall094
+    400420: military wall095
+    400422: military wall096
+    400424: military wall097
+    400426: military wall098
+    400428: military wall099
+    400430: military wall10
+    400432: military wall100
+    400434: military wall101
+    400436: military wall102
+    400438: military wall103
+    400440: military wall104
+    400442: military wall105
+    400444: military wall106
+    400446: military wall107
+    400448: military wall108
+    400450: military wall109
+    400452: military wall11
+    400454: military wall110
+    400456: military wall114
+    400458: military wall115
+    400460: military wall116
+    400462: military wall117
+    400464: military wall118
+    400466: military wall119
+    400468: military wall12
+    400470: military wall120
+    400472: military wall121
+    400474: military wall122
+    400476: military wall123
+    400478: military wall124
+    400480: military wall125
+    400482: military wall126
+    400484: military wall127
+    400486: military wall128
+    400488: military wall129
+    400490: military wall13
+    400492: military wall130
+    400494: military wall131
+    400496: military wall132
+    400498: military wall133
+    400500: military wall134
+    400502: military wall135
+    400504: military wall136
+    400506: military wall137
+    400508: military wall138
+    400510: military wall139
+    400512: military wall14
+    400514: military wall140
+    400516: military wall141
+    400518: military wall142
+    400520: military wall143
+    400522: military wall144
+    400524: military wall145
+    400526: military wall146
+    400528: military wall147
+    400530: military wall148
+    400532: military wall149
+    400534: military wall15
+    400536: military wall150
+    400538: military wall151
+    400540: military wall152
+    400542: military wall153
+    400544: military wall154
+    400546: military wall155
+    400548: military wall159
+    400550: military wall16
+    400552: military wall160
+    400554: military wall161
+    400556: military wall162
+    400558: military wall163
+    400560: military wall164
+    400562: military wall165
+    400564: military wall166
+    400566: military wall167
+    400568: military wall168
+    400570: military wall169
+    400572: military wall17
+    400574: military wall170
+    400576: military wall171
+    400578: military wall172
+    400580: military wall173
+    400582: military wall174
+    400584: military wall175
+    400586: military wall176
+    400588: military wall177
+    400590: military wall178
+    400592: military wall179
+    400594: military wall18
+    400596: military wall19
+    400598: military wall20
+    400600: military wall21
+    400602: military wall22
+    400604: military wall23
+    400606: military wall24
+    400608: military wall25
+    400610: military wall26
+    400612: military wall27
+    400614: military wall28
+    400616: military wall29
+    400618: military wall30
+    400620: military wall31
+    400622: military wall32
+    400624: military wall33
+    400626: military wall34
+    400628: military wall35
+    400630: military wall36
+    400632: military wall37
+    400634: military wall38
+    400636: military wall39
+    400638: military wall40
+    400640: military wall41
+    400642: military wall42
+    400644: military wall43
+    400646: military wall44
+    400648: Plane001
+    400650: Plane001 1
+    400652: Plane001 2
+    400654: Plane001 3
+    400656: Plane001 4
+    400658: Plane002
+    400660: Plane003
+    400662: Plane004
+    400664: Plane005
+    400666: Plane006
+    400668: Plane007
+    400670: Plane008
+    400672: Plane009
+    400674: Plane010
+    400676: Plane011
+    400678: Plane012
+    400680: Plane013
+    400682: Plane014
+    400684: Plane015
+    400686: Plane016
+    400688: Plane017
+    400690: Plane018
+    400692: Plane019
+    400694: Plane020
+    400696: Plane021
+    400698: Plane022
+    400700: Plane023
+    400702: Plane024
+    400704: Plane025
+    400706: Plane026
+    400708: Plane027
+    400710: Plane028
+    400712: Plane029
+    2300000: Box001
+    2300002: Box001 1
+    2300004: Box001 10
+    2300006: Box001 2
+    2300008: Box001 3
+    2300010: Box001 4
+    2300012: Box001 5
+    2300014: Box001 6
+    2300016: Box001 7
+    2300018: Box001 8
+    2300020: Box001 9
+    2300022: Box002
+    2300024: Box003
+    2300026: Box004
+    2300028: Box006
+    2300030: Box010
+    2300032: Box011
+    2300034: Box012
+    2300036: Box013
+    2300038: Box014
+    2300040: Box015
+    2300042: Box016
+    2300044: Box017
+    2300046: Box018
+    2300048: Box019
+    2300050: Box020
+    2300052: Box021
+    2300054: Box022
+    2300056: Box025
+    2300058: Box028
+    2300060: Box029
+    2300062: Box030
+    2300064: Box031
+    2300066: Box032
+    2300068: Box033
+    2300070: Box034
+    2300072: Box035
+    2300074: Box036
+    2300076: Box037
+    2300078: Box038
+    2300080: Box039
+    2300082: Box040
+    2300084: Box041
+    2300086: Box042
+    2300088: Box043
+    2300090: Box044
+    2300092: Box045
+    2300094: Box046
+    2300096: Box047
+    2300098: Box048
+    2300100: Box049
+    2300102: Box050
+    2300104: Box051
+    2300106: Box052
+    2300108: Box053
+    2300110: Box054
+    2300112: Box055
+    2300114: Box056
+    2300116: Box057
+    2300118: Box058
+    2300120: Box059
+    2300122: Box060
+    2300124: Box061
+    2300126: Box062
+    2300128: Box063
+    2300130: Box065
+    2300132: Cylinder001
+    2300134: Cylinder142
+    2300136: lights
+    2300138: lights01
+    2300140: lights02
+    2300142: lights03
+    2300144: lights04
+    2300146: lights05
+    2300148: lights06
+    2300150: lights07
+    2300152: lights08
+    2300154: lights09
+    2300156: lights10
+    2300158: lights11
+    2300160: lights12
+    2300162: lights13
+    2300164: lights14
+    2300166: lights15
+    2300168: lights16
+    2300170: lights17
+    2300172: lights18
+    2300174: lights19
+    2300176: lights20
+    2300178: lights21
+    2300180: lights22
+    2300182: lights23
+    2300184: lights24
+    2300186: lights25
+    2300188: lights26
+    2300190: lights27
+    2300192: lights28
+    2300194: lights29
+    2300196: lights30
+    2300198: lights31
+    2300200: lights32
+    2300202: lights33
+    2300204: lights34
+    2300206: lights35
+    2300208: lights36
+    2300210: lights37
+    2300212: lights38
+    2300214: lights39
+    2300216: lights40
+    2300218: lights41
+    2300220: lights42
+    2300222: lights43
+    2300224: lights44
+    2300226: lights45
+    2300228: lights46
+    2300230: lights47
+    2300232: lights48
+    2300234: lights49
+    2300236: lights50
+    2300238: lights51
+    2300240: lights52
+    2300242: lights53
+    2300244: lights54
+    2300246: lights55
+    2300248: lights56
+    2300250: lights57
+    2300252: lights58
+    2300254: lights59
+    2300256: lights60
+    2300258: lights61
+    2300260: lights62
+    2300262: lights63
+    2300264: lights64
+    2300266: lights65
+    2300268: lights66
+    2300270: lights67
+    2300272: lights68
+    2300274: lights69
+    2300276: lights70
+    2300278: lights71
+    2300280: lights72
+    2300282: lights73
+    2300284: lights74
+    2300286: lights75
+    2300288: lights76
+    2300290: lights77
+    2300292: lights78
+    2300294: lights79
+    2300296: lights80
+    2300298: military wall
+    2300300: military wall01
+    2300302: military wall02
+    2300304: military wall03
+    2300306: military wall04
+    2300308: military wall045
+    2300310: military wall046
+    2300312: military wall047
+    2300314: military wall048
+    2300316: military wall049
+    2300318: military wall05
+    2300320: military wall050
+    2300322: military wall051
+    2300324: military wall052
+    2300326: military wall053
+    2300328: military wall054
+    2300330: military wall055
+    2300332: military wall056
+    2300334: military wall057
+    2300336: military wall058
+    2300338: military wall059
+    2300340: military wall06
+    2300342: military wall060
+    2300344: military wall061
+    2300346: military wall062
+    2300348: military wall063
+    2300350: military wall064
+    2300352: military wall065
+    2300354: military wall066
+    2300356: military wall067
+    2300358: military wall068
+    2300360: military wall069
+    2300362: military wall07
+    2300364: military wall070
+    2300366: military wall071
+    2300368: military wall072
+    2300370: military wall073
+    2300372: military wall074
+    2300374: military wall075
+    2300376: military wall076
+    2300378: military wall077
+    2300380: military wall078
+    2300382: military wall079
+    2300384: military wall08
+    2300386: military wall080
+    2300388: military wall081
+    2300390: military wall082
+    2300392: military wall083
+    2300394: military wall084
+    2300396: military wall085
+    2300398: military wall086
+    2300400: military wall087
+    2300402: military wall088
+    2300404: military wall089
+    2300406: military wall09
+    2300408: military wall090
+    2300410: military wall091
+    2300412: military wall092
+    2300414: military wall093
+    2300416: military wall094
+    2300418: military wall095
+    2300420: military wall096
+    2300422: military wall097
+    2300424: military wall098
+    2300426: military wall099
+    2300428: military wall10
+    2300430: military wall100
+    2300432: military wall101
+    2300434: military wall102
+    2300436: military wall103
+    2300438: military wall104
+    2300440: military wall105
+    2300442: military wall106
+    2300444: military wall107
+    2300446: military wall108
+    2300448: military wall109
+    2300450: military wall11
+    2300452: military wall110
+    2300454: military wall114
+    2300456: military wall115
+    2300458: military wall116
+    2300460: military wall117
+    2300462: military wall118
+    2300464: military wall119
+    2300466: military wall12
+    2300468: military wall120
+    2300470: military wall121
+    2300472: military wall122
+    2300474: military wall123
+    2300476: military wall124
+    2300478: military wall125
+    2300480: military wall126
+    2300482: military wall127
+    2300484: military wall128
+    2300486: military wall129
+    2300488: military wall13
+    2300490: military wall130
+    2300492: military wall131
+    2300494: military wall132
+    2300496: military wall133
+    2300498: military wall134
+    2300500: military wall135
+    2300502: military wall136
+    2300504: military wall137
+    2300506: military wall138
+    2300508: military wall139
+    2300510: military wall14
+    2300512: military wall140
+    2300514: military wall141
+    2300516: military wall142
+    2300518: military wall143
+    2300520: military wall144
+    2300522: military wall145
+    2300524: military wall146
+    2300526: military wall147
+    2300528: military wall148
+    2300530: military wall149
+    2300532: military wall15
+    2300534: military wall150
+    2300536: military wall151
+    2300538: military wall152
+    2300540: military wall153
+    2300542: military wall154
+    2300544: military wall155
+    2300546: military wall159
+    2300548: military wall16
+    2300550: military wall160
+    2300552: military wall161
+    2300554: military wall162
+    2300556: military wall163
+    2300558: military wall164
+    2300560: military wall165
+    2300562: military wall166
+    2300564: military wall167
+    2300566: military wall168
+    2300568: military wall169
+    2300570: military wall17
+    2300572: military wall170
+    2300574: military wall171
+    2300576: military wall172
+    2300578: military wall173
+    2300580: military wall174
+    2300582: military wall175
+    2300584: military wall176
+    2300586: military wall177
+    2300588: military wall178
+    2300590: military wall179
+    2300592: military wall18
+    2300594: military wall19
+    2300596: military wall20
+    2300598: military wall21
+    2300600: military wall22
+    2300602: military wall23
+    2300604: military wall24
+    2300606: military wall25
+    2300608: military wall26
+    2300610: military wall27
+    2300612: military wall28
+    2300614: military wall29
+    2300616: military wall30
+    2300618: military wall31
+    2300620: military wall32
+    2300622: military wall33
+    2300624: military wall34
+    2300626: military wall35
+    2300628: military wall36
+    2300630: military wall37
+    2300632: military wall38
+    2300634: military wall39
+    2300636: military wall40
+    2300638: military wall41
+    2300640: military wall42
+    2300642: military wall43
+    2300644: military wall44
+    2300646: Plane001
+    2300648: Plane001 1
+    2300650: Plane001 2
+    2300652: Plane001 3
+    2300654: Plane001 4
+    2300656: Plane002
+    2300658: Plane003
+    2300660: Plane004
+    2300662: Plane005
+    2300664: Plane006
+    2300666: Plane007
+    2300668: Plane008
+    2300670: Plane009
+    2300672: Plane010
+    2300674: Plane011
+    2300676: Plane012
+    2300678: Plane013
+    2300680: Plane014
+    2300682: Plane015
+    2300684: Plane016
+    2300686: Plane017
+    2300688: Plane018
+    2300690: Plane019
+    2300692: Plane020
+    2300694: Plane021
+    2300696: Plane022
+    2300698: Plane023
+    2300700: Plane024
+    2300702: Plane025
+    2300704: Plane026
+    2300706: Plane027
+    2300708: Plane028
+    2300710: Plane029
+    3300000: Box001
+    3300002: Box001 1
+    3300004: Box001 10
+    3300006: Box001 2
+    3300008: Box001 3
+    3300010: Box001 4
+    3300012: Box001 5
+    3300014: Box001 6
+    3300016: Box001 7
+    3300018: Box001 8
+    3300020: Box001 9
+    3300022: Box002
+    3300024: Box003
+    3300026: Box004
+    3300028: Box006
+    3300030: Box010
+    3300032: Box011
+    3300034: Box012
+    3300036: Box013
+    3300038: Box014
+    3300040: Box015
+    3300042: Box016
+    3300044: Box017
+    3300046: Box018
+    3300048: Box019
+    3300050: Box020
+    3300052: Box021
+    3300054: Box022
+    3300056: Box025
+    3300058: Box028
+    3300060: Box029
+    3300062: Box030
+    3300064: Box031
+    3300066: Box032
+    3300068: Box033
+    3300070: Box034
+    3300072: Box035
+    3300074: Box036
+    3300076: Box037
+    3300078: Box038
+    3300080: Box039
+    3300082: Box040
+    3300084: Box041
+    3300086: Box042
+    3300088: Box043
+    3300090: Box044
+    3300092: Box045
+    3300094: Box046
+    3300096: Box047
+    3300098: Box048
+    3300100: Box049
+    3300102: Box050
+    3300104: Box051
+    3300106: Box052
+    3300108: Box053
+    3300110: Box054
+    3300112: Box055
+    3300114: Box056
+    3300116: Box057
+    3300118: Box058
+    3300120: Box059
+    3300122: Box060
+    3300124: Box061
+    3300126: Box062
+    3300128: Box063
+    3300130: Box065
+    3300132: Cylinder001
+    3300134: Cylinder142
+    3300136: lights
+    3300138: lights01
+    3300140: lights02
+    3300142: lights03
+    3300144: lights04
+    3300146: lights05
+    3300148: lights06
+    3300150: lights07
+    3300152: lights08
+    3300154: lights09
+    3300156: lights10
+    3300158: lights11
+    3300160: lights12
+    3300162: lights13
+    3300164: lights14
+    3300166: lights15
+    3300168: lights16
+    3300170: lights17
+    3300172: lights18
+    3300174: lights19
+    3300176: lights20
+    3300178: lights21
+    3300180: lights22
+    3300182: lights23
+    3300184: lights24
+    3300186: lights25
+    3300188: lights26
+    3300190: lights27
+    3300192: lights28
+    3300194: lights29
+    3300196: lights30
+    3300198: lights31
+    3300200: lights32
+    3300202: lights33
+    3300204: lights34
+    3300206: lights35
+    3300208: lights36
+    3300210: lights37
+    3300212: lights38
+    3300214: lights39
+    3300216: lights40
+    3300218: lights41
+    3300220: lights42
+    3300222: lights43
+    3300224: lights44
+    3300226: lights45
+    3300228: lights46
+    3300230: lights47
+    3300232: lights48
+    3300234: lights49
+    3300236: lights50
+    3300238: lights51
+    3300240: lights52
+    3300242: lights53
+    3300244: lights54
+    3300246: lights55
+    3300248: lights56
+    3300250: lights57
+    3300252: lights58
+    3300254: lights59
+    3300256: lights60
+    3300258: lights61
+    3300260: lights62
+    3300262: lights63
+    3300264: lights64
+    3300266: lights65
+    3300268: lights66
+    3300270: lights67
+    3300272: lights68
+    3300274: lights69
+    3300276: lights70
+    3300278: lights71
+    3300280: lights72
+    3300282: lights73
+    3300284: lights74
+    3300286: lights75
+    3300288: lights76
+    3300290: lights77
+    3300292: lights78
+    3300294: lights79
+    3300296: lights80
+    3300298: military wall
+    3300300: military wall01
+    3300302: military wall02
+    3300304: military wall03
+    3300306: military wall04
+    3300308: military wall045
+    3300310: military wall046
+    3300312: military wall047
+    3300314: military wall048
+    3300316: military wall049
+    3300318: military wall05
+    3300320: military wall050
+    3300322: military wall051
+    3300324: military wall052
+    3300326: military wall053
+    3300328: military wall054
+    3300330: military wall055
+    3300332: military wall056
+    3300334: military wall057
+    3300336: military wall058
+    3300338: military wall059
+    3300340: military wall06
+    3300342: military wall060
+    3300344: military wall061
+    3300346: military wall062
+    3300348: military wall063
+    3300350: military wall064
+    3300352: military wall065
+    3300354: military wall066
+    3300356: military wall067
+    3300358: military wall068
+    3300360: military wall069
+    3300362: military wall07
+    3300364: military wall070
+    3300366: military wall071
+    3300368: military wall072
+    3300370: military wall073
+    3300372: military wall074
+    3300374: military wall075
+    3300376: military wall076
+    3300378: military wall077
+    3300380: military wall078
+    3300382: military wall079
+    3300384: military wall08
+    3300386: military wall080
+    3300388: military wall081
+    3300390: military wall082
+    3300392: military wall083
+    3300394: military wall084
+    3300396: military wall085
+    3300398: military wall086
+    3300400: military wall087
+    3300402: military wall088
+    3300404: military wall089
+    3300406: military wall09
+    3300408: military wall090
+    3300410: military wall091
+    3300412: military wall092
+    3300414: military wall093
+    3300416: military wall094
+    3300418: military wall095
+    3300420: military wall096
+    3300422: military wall097
+    3300424: military wall098
+    3300426: military wall099
+    3300428: military wall10
+    3300430: military wall100
+    3300432: military wall101
+    3300434: military wall102
+    3300436: military wall103
+    3300438: military wall104
+    3300440: military wall105
+    3300442: military wall106
+    3300444: military wall107
+    3300446: military wall108
+    3300448: military wall109
+    3300450: military wall11
+    3300452: military wall110
+    3300454: military wall114
+    3300456: military wall115
+    3300458: military wall116
+    3300460: military wall117
+    3300462: military wall118
+    3300464: military wall119
+    3300466: military wall12
+    3300468: military wall120
+    3300470: military wall121
+    3300472: military wall122
+    3300474: military wall123
+    3300476: military wall124
+    3300478: military wall125
+    3300480: military wall126
+    3300482: military wall127
+    3300484: military wall128
+    3300486: military wall129
+    3300488: military wall13
+    3300490: military wall130
+    3300492: military wall131
+    3300494: military wall132
+    3300496: military wall133
+    3300498: military wall134
+    3300500: military wall135
+    3300502: military wall136
+    3300504: military wall137
+    3300506: military wall138
+    3300508: military wall139
+    3300510: military wall14
+    3300512: military wall140
+    3300514: military wall141
+    3300516: military wall142
+    3300518: military wall143
+    3300520: military wall144
+    3300522: military wall145
+    3300524: military wall146
+    3300526: military wall147
+    3300528: military wall148
+    3300530: military wall149
+    3300532: military wall15
+    3300534: military wall150
+    3300536: military wall151
+    3300538: military wall152
+    3300540: military wall153
+    3300542: military wall154
+    3300544: military wall155
+    3300546: military wall159
+    3300548: military wall16
+    3300550: military wall160
+    3300552: military wall161
+    3300554: military wall162
+    3300556: military wall163
+    3300558: military wall164
+    3300560: military wall165
+    3300562: military wall166
+    3300564: military wall167
+    3300566: military wall168
+    3300568: military wall169
+    3300570: military wall17
+    3300572: military wall170
+    3300574: military wall171
+    3300576: military wall172
+    3300578: military wall173
+    3300580: military wall174
+    3300582: military wall175
+    3300584: military wall176
+    3300586: military wall177
+    3300588: military wall178
+    3300590: military wall179
+    3300592: military wall18
+    3300594: military wall19
+    3300596: military wall20
+    3300598: military wall21
+    3300600: military wall22
+    3300602: military wall23
+    3300604: military wall24
+    3300606: military wall25
+    3300608: military wall26
+    3300610: military wall27
+    3300612: military wall28
+    3300614: military wall29
+    3300616: military wall30
+    3300618: military wall31
+    3300620: military wall32
+    3300622: military wall33
+    3300624: military wall34
+    3300626: military wall35
+    3300628: military wall36
+    3300630: military wall37
+    3300632: military wall38
+    3300634: military wall39
+    3300636: military wall40
+    3300638: military wall41
+    3300640: military wall42
+    3300642: military wall43
+    3300644: military wall44
+    3300646: Plane001
+    3300648: Plane001 1
+    3300650: Plane001 2
+    3300652: Plane001 3
+    3300654: Plane001 4
+    3300656: Plane002
+    3300658: Plane003
+    3300660: Plane004
+    3300662: Plane005
+    3300664: Plane006
+    3300666: Plane007
+    3300668: Plane008
+    3300670: Plane009
+    3300672: Plane010
+    3300674: Plane011
+    3300676: Plane012
+    3300678: Plane013
+    3300680: Plane014
+    3300682: Plane015
+    3300684: Plane016
+    3300686: Plane017
+    3300688: Plane018
+    3300690: Plane019
+    3300692: Plane020
+    3300694: Plane021
+    3300696: Plane022
+    3300698: Plane023
+    3300700: Plane024
+    3300702: Plane025
+    3300704: Plane026
+    3300706: Plane027
+    3300708: Plane028
+    3300710: Plane029
+    4300000: Box001
+    4300002: Box006
+    4300004: Box001
+    4300006: Box001
+    4300008: Box010
+    4300010: Box011
+    4300012: Box012
+    4300014: Box001
+    4300016: Box013
+    4300018: Box014
+    4300020: Box015
+    4300022: Box001
+    4300024: Box016
+    4300026: Box017
+    4300028: Box018
+    4300030: Box019
+    4300032: Box001
+    4300034: Box020
+    4300036: Box001
+    4300038: Box021
+    4300040: Box001
+    4300042: Box022
+    4300044: Box025
+    4300046: Box001
+    4300048: lights
+    4300050: lights21
+    4300052: lights20
+    4300054: lights34
+    4300056: lights38
+    4300058: lights37
+    4300060: lights36
+    4300062: lights35
+    4300064: lights47
+    4300066: lights46
+    4300068: lights05
+    4300070: lights06
+    4300072: lights03
+    4300074: lights04
+    4300076: lights11
+    4300078: lights12
+    4300080: lights15
+    4300082: lights14
+    4300084: lights13
+    4300086: lights22
+    4300088: lights23
+    4300090: lights39
+    4300092: lights41
+    4300094: lights42
+    4300096: lights40
+    4300098: lights43
+    4300100: lights45
+    4300102: lights44
+    4300104: lights53
+    4300106: lights54
+    4300108: lights49
+    4300110: lights50
+    4300112: lights51
+    4300114: lights52
+    4300116: lights25
+    4300118: lights26
+    4300120: lights27
+    4300122: lights24
+    4300124: Cylinder142
+    4300126: lights80
+    4300128: lights01
+    4300130: lights02
+    4300132: lights48
+    4300134: lights55
+    4300136: Box001
+    4300138: Box028
+    4300140: Box029
+    4300142: Box030
+    4300144: Box031
+    4300146: Box032
+    4300148: Box033
+    4300150: lights28
+    4300152: lights56
+    4300154: lights57
+    4300156: lights58
+    4300158: lights59
+    4300160: lights60
+    4300162: lights63
+    4300164: lights62
+    4300166: lights61
+    4300168: lights64
+    4300170: lights65
+    4300172: lights67
+    4300174: lights70
+    4300176: lights69
+    4300178: lights68
+    4300180: lights66
+    4300182: lights29
+    4300184: lights30
+    4300186: lights31
+    4300188: lights16
+    4300190: lights18
+    4300192: lights19
+    4300194: lights78
+    4300196: lights79
+    4300198: lights07
+    4300200: lights09
+    4300202: lights10
+    4300204: lights08
+    4300206: lights75
+    4300208: lights76
+    4300210: lights77
+    4300212: lights74
+    4300214: lights73
+    4300216: lights72
+    4300218: lights71
+    4300220: lights32
+    4300222: lights33
+    4300224: lights17
+    4300226: Box034
+    4300228: Box035
+    4300230: Box036
+    4300232: Box037
+    4300234: Box038
+    4300236: Box039
+    4300238: Box040
+    4300240: Box041
+    4300242: Box042
+    4300244: Box043
+    4300246: Plane021
+    4300248: Plane020
+    4300250: Plane023
+    4300252: Plane008
+    4300254: Plane003
+    4300256: Plane002
+    4300258: Plane007
+    4300260: Plane004
+    4300262: Plane001
+    4300264: Box001
+    4300266: Plane009
+    4300268: Plane006
+    4300270: Plane019
+    4300272: Plane015
+    4300274: Plane014
+    4300276: Plane011
+    4300278: Plane013
+    4300280: Plane016
+    4300282: Plane001
+    4300284: Plane017
+    4300286: Box004
+    4300288: Box002
+    4300290: Plane010
+    4300292: Plane001
+    4300294: Plane005
+    4300296: Box003
+    4300298: Plane001
+    4300300: Plane022
+    4300302: Plane018
+    4300304: Plane001
+    4300306: Plane012
+    4300308: Box044
+    4300310: Box045
+    4300312: military wall
+    4300314: military wall44
+    4300316: military wall43
+    4300318: military wall42
+    4300320: military wall41
+    4300322: military wall40
+    4300324: military wall39
+    4300326: military wall38
+    4300328: military wall37
+    4300330: military wall36
+    4300332: military wall35
+    4300334: military wall34
+    4300336: military wall33
+    4300338: military wall32
+    4300340: military wall31
+    4300342: military wall30
+    4300344: military wall29
+    4300346: military wall27
+    4300348: military wall28
+    4300350: military wall26
+    4300352: military wall25
+    4300354: military wall24
+    4300356: military wall23
+    4300358: military wall22
+    4300360: military wall21
+    4300362: military wall20
+    4300364: military wall19
+    4300366: military wall18
+    4300368: military wall17
+    4300370: military wall16
+    4300372: military wall15
+    4300374: military wall14
+    4300376: military wall13
+    4300378: military wall12
+    4300380: military wall11
+    4300382: military wall10
+    4300384: military wall09
+    4300386: military wall08
+    4300388: military wall07
+    4300390: military wall05
+    4300392: military wall06
+    4300394: military wall04
+    4300396: military wall03
+    4300398: military wall02
+    4300400: military wall01
+    4300402: military wall045
+    4300404: military wall046
+    4300406: military wall047
+    4300408: military wall048
+    4300410: military wall049
+    4300412: military wall050
+    4300414: military wall051
+    4300416: military wall052
+    4300418: military wall053
+    4300420: military wall054
+    4300422: military wall055
+    4300424: military wall056
+    4300426: military wall057
+    4300428: military wall058
+    4300430: military wall059
+    4300432: military wall060
+    4300434: military wall061
+    4300436: military wall062
+    4300438: military wall063
+    4300440: military wall064
+    4300442: military wall065
+    4300444: military wall066
+    4300446: military wall067
+    4300448: military wall068
+    4300450: military wall069
+    4300452: military wall070
+    4300454: military wall071
+    4300456: military wall072
+    4300458: military wall073
+    4300460: military wall074
+    4300462: military wall075
+    4300464: military wall076
+    4300466: military wall077
+    4300468: military wall078
+    4300470: military wall079
+    4300472: military wall080
+    4300474: military wall081
+    4300476: military wall082
+    4300478: military wall083
+    4300480: military wall084
+    4300482: military wall085
+    4300484: military wall086
+    4300486: military wall087
+    4300488: military wall088
+    4300490: military wall089
+    4300492: military wall090
+    4300494: military wall091
+    4300496: military wall092
+    4300498: military wall093
+    4300500: military wall094
+    4300502: military wall095
+    4300504: military wall096
+    4300506: military wall097
+    4300508: military wall098
+    4300510: military wall099
+    4300512: military wall100
+    4300514: military wall101
+    4300516: military wall102
+    4300518: military wall103
+    4300520: military wall104
+    4300522: military wall105
+    4300524: military wall106
+    4300526: military wall107
+    4300528: military wall108
+    4300530: military wall109
+    4300532: military wall110
+    4300534: military wall114
+    4300536: military wall115
+    4300538: military wall116
+    4300540: military wall117
+    4300542: military wall118
+    4300544: military wall119
+    4300546: military wall120
+    4300548: military wall121
+    4300550: military wall122
+    4300552: military wall123
+    4300554: military wall124
+    4300556: military wall125
+    4300558: military wall126
+    4300560: military wall127
+    4300562: military wall128
+    4300564: military wall129
+    4300566: military wall130
+    4300568: military wall131
+    4300570: military wall132
+    4300572: military wall133
+    4300574: military wall134
+    4300576: military wall135
+    4300578: military wall136
+    4300580: military wall137
+    4300582: military wall138
+    4300584: military wall139
+    4300586: military wall140
+    4300588: military wall141
+    4300590: military wall142
+    4300592: military wall143
+    4300594: military wall144
+    4300596: military wall145
+    4300598: military wall146
+    4300600: military wall147
+    4300602: military wall148
+    4300604: military wall149
+    4300606: military wall150
+    4300608: military wall151
+    4300610: military wall152
+    4300612: military wall153
+    4300614: military wall154
+    4300616: military wall155
+    4300618: military wall159
+    4300620: military wall160
+    4300622: military wall161
+    4300624: military wall162
+    4300626: military wall163
+    4300628: military wall164
+    4300630: military wall165
+    4300632: military wall166
+    4300634: military wall167
+    4300636: military wall168
+    4300638: military wall169
+    4300640: military wall170
+    4300642: military wall171
+    4300644: military wall172
+    4300646: military wall173
+    4300648: military wall174
+    4300650: military wall175
+    4300652: military wall176
+    4300654: military wall177
+    4300656: military wall178
+    4300658: military wall179
+    4300660: Box046
+    4300662: Box047
+    4300664: Box048
+    4300666: Box049
+    4300668: Box050
+    4300670: Box051
+    4300672: Box052
+    4300674: Box053
+    4300676: Box054
+    4300678: Box055
+    4300680: Box056
+    4300682: Box057
+    4300684: Box058
+    4300686: Box059
+    4300688: Box060
+    4300690: Cylinder001
+    4300692: Box061
+    4300694: Box062
+    4300696: Plane024
+    4300698: Box063
+    4300700: Plane025
+    4300702: Box065
+    4300704: Plane026
+    4300706: Plane027
+    4300708: Plane028
+    4300710: Plane029
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
