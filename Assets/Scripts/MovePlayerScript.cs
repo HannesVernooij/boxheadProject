@@ -58,9 +58,6 @@ public class MovePlayerScript : MonoBehaviour
     }
     void Start()
     {
-
-
-
         LookAtGameObject = GameObject.FindGameObjectWithTag("LookAtCube");
         LookAtGameObject1 = GameObject.FindGameObjectWithTag("LookAtCube1");
         LookAtGameObject2 = GameObject.FindGameObjectWithTag("LookAtCube2");
@@ -76,11 +73,11 @@ public class MovePlayerScript : MonoBehaviour
 
         defaultSlowingDownSpeed = slowingDownSpeed;
 
-        for(int i = 0; i < 4; i++)
+        for (int i = 0; i < 4; i++)
         {
             for (int i2 = 0; i2 < 4; i2++)
             {
-                if (_currentPlayerGuns[i,i2].gameObject.tag == "Pistol")
+                if (_currentPlayerGuns[i, i2].gameObject.tag == "Pistol")
                 {
                     _currentPlayerGuns[i, i2].ClipSize = 6;
                     _currentPlayerGuns[i, i2].ReloadSpeed = 0.4f;
@@ -88,7 +85,7 @@ public class MovePlayerScript : MonoBehaviour
                     _currentPlayerGuns[i, i2].Damage = 1;
                     _currentPlayerGuns[i, i2].Ammo(Random.Range(12, 50));
                     _selectedGun[i] = _currentPlayerGuns[i, i2];
-            }
+                }
                 if (_currentPlayerGuns[i, i2].gameObject.tag == "Shotgun")
                 {
                     _currentPlayerGuns[i, i2].ClipSize = 6;
@@ -225,5 +222,16 @@ public class MovePlayerScript : MonoBehaviour
         Debug.Log(_selectedGunCounter[id]);
         _selectedGun[id] = _currentPlayerGuns[id, _selectedGunCounter[id]];
         _selectedGun[id].gameObject.SetActive(true);
+    }
+
+    public void SetGunColors()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            _currentPlayerGuns[i, 0].GetComponent<Renderer>().material.color = Color.red;
+            _currentPlayerGuns[i, 1].GetComponent<Renderer>().material.color = Color.green;
+            _currentPlayerGuns[i, 2].GetComponent<Renderer>().material.color = Color.blue;
+            _currentPlayerGuns[i, 3].GetComponent<Renderer>().material.color = Color.yellow;
+        }
     }
 }

@@ -105,8 +105,7 @@ public class StartScript : MonoBehaviour
             _movePlayerScript.Players = _players;
             _movePlayerScript.Gamestate = _gamestate;
             _movePlayerScript.PlayerCameras = _playerCameras;
-            _uiScript.InitializeValues();
-
+            _movePlayerScript.SetGunColors();
             for (int i = 0; i < _players.Length; i++)
             {
                 _players[i].GetComponent<PlayerScript>().ID = i;

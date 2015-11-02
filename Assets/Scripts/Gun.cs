@@ -46,7 +46,7 @@ public class Gun : MonoBehaviour
 
     public void Ammo(int value)
     {
-        _ammo = value;
+        _ammo += value;
         CalculateAmmo();
     }
     public int Ammo()
@@ -61,10 +61,6 @@ public class Gun : MonoBehaviour
     }
     void Update()
     {
-        if(gameObject.tag == "Shotgun")
-        {
-            Debug.Log(_ammo);
-        }
         if (_remainingDelay >= 0)
         {
             _remainingDelay -= Time.deltaTime;

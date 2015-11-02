@@ -25,19 +25,23 @@ public class EnemyDropScript : MonoBehaviour
             }
             else if (dropChance >= 21 && dropChance <= 50)//pistol
             {
-                Instantiate(m_Guns[0], transform.position, Quaternion.identity);
+                GameObject temp = Instantiate(m_Guns[0], transform.position, Quaternion.identity) as GameObject;
+                temp.GetComponent<Renderer>().material.color = Color.red;
             }
             else if (dropChance >= 51 && dropChance <= 60)//shotgun
             {
-                Instantiate(m_Guns[1], transform.position, Quaternion.identity);
+                GameObject temp = Instantiate(m_Guns[1], new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity) as GameObject; ;
+                temp.GetComponent<Renderer>().material.color = Color.green;
             }
             else if (dropChance >= 61 && dropChance <= 70)//smg
             {
-                Instantiate(m_Guns[2], transform.position, Quaternion.identity);
+                GameObject temp = Instantiate(m_Guns[2], new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity) as GameObject; ;
+                temp.GetComponent<Renderer>().material.color = Color.blue;
             }
             else if (dropChance >= 71 && dropChance <= 100)//Sniper rife
             {
-                Instantiate(m_Guns[3], transform.position, Quaternion.identity);
+                GameObject temp = Instantiate(m_Guns[3], new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity) as GameObject; ;
+                temp.GetComponent<Renderer>().material.color = Color.yellow;
             }
         }
     }

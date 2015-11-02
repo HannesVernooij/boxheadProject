@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
     private int _id;
     [SerializeField]
     private GameObject _gunPositionObject;
+    [SerializeField]
+    UIScript _uiScript;
     private Vector3 _startPosition;
     private GameObject _controlObject;
     private float _boxLoadTimer = 0;
@@ -42,21 +44,19 @@ public class PlayerScript : MonoBehaviour
         _controlObject = _movePlayerScript.gameObject;
         _startPosition = gameObject.transform.position;
     }
-    
+
     public void Update()
     {
-        if(_hp <= 0)
+        if (_hp <= 0)
         {
             _hp = 10;
             gameObject.transform.position = _startPosition;
             _currentBoxes = 0;
-            _movePlayerScript.CurrentPlayerGuns[_id, 0] = null;
-            _movePlayerScript.CurrentPlayerGuns[_id, 1] = null;
         }
 
-        if(Vector3.Distance(gameObject.transform.position,_controlObject.transform.position) < 1.3f)
+        if (Vector3.Distance(gameObject.transform.position, _controlObject.transform.position) < 1.3f)
         {
-            if(_boxLoadTimer < 1)
+            if (_boxLoadTimer < 1)
             {
                 _boxLoadTimer += Time.deltaTime / 10;
             }
@@ -74,7 +74,7 @@ public class PlayerScript : MonoBehaviour
 
             if (_boxUnloadTimer < 1)
             {
-                _boxUnloadTimer += (Time.deltaTime/2);
+                _boxUnloadTimer += (Time.deltaTime / 2);
             }
             else
             {
@@ -84,21 +84,45 @@ public class PlayerScript : MonoBehaviour
             }
 
         }
-        else if(_currentBoxes <= 0)
+        else if (_currentBoxes <= 0)
         {
             _currentBoxes = 0;
             _objectiveParticles.startColor = Color.green;
             _objectiveParticles.enableEmission = false;
         }
     }
-
+    void OnTriggerEnter(Collider collider)
+    {
+        Debug.Log(collider.tag);
+        if (collider.tag == "Pistol")
+        {
+            _movePlayerScript.CurrentPlayerGuns[_id, 0].Ammo(Random.Range(12, 50));
+            Destroy(collider.gameObject);
+        }
+        if (collider.tag == "Shotgun")
+        {
+            _movePlayerScript.CurrentPlayerGuns[_id, 1].Ammo(Random.Range(6, 20));
+            Destroy(collider.gameObject);
+        }
+        if (collider.tag == "Smg")
+        {
+            _movePlayerScript.CurrentPlayerGuns[_id, 2].Ammo(Random.Range(30, 90));
+            Destroy(collider.gameObject);
+        }
+        if (collider.tag == "Sniper")
+        {
+            _movePlayerScript.CurrentPlayerGuns[_id, 3].Ammo(Random.Range(6, 20));
+            Destroy(collider.gameObject);
+        }
+        //_uiScript.UpdateValues();  //ToDo
+    }
     void OnCollisionStay(Collision collision)
     {
-        if(collision.collider.tag == "Zombie")
+        if (collision.collider.tag == "Zombie")
         {
             _tempDamageCounter += Time.deltaTime;
 
-            if(_tempDamageCounter > 1)
+            if (_tempDamageCounter > 1)
             {
                 _hp--;
                 _tempDamageCounter = 0;
