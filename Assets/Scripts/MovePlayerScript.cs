@@ -177,8 +177,8 @@ public class MovePlayerScript : MonoBehaviour
     {
         int amountOfBoxes = _players[0].GetComponent<PlayerScript>().CurrentBoxes;
         slowingDownSpeed = defaultSlowingDownSpeed + (amountOfBoxes * 2);
-        _players[0].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed));
-        m_Animator[0].SetFloat("Speed", playerV + playerH);
+        _players[0].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
+        m_Animator[0].SetFloat("Speed", Mathf.Abs(playerV + playerH));
 
         Vector3 LookDirection = new Vector3(_players[0].transform.position.x + playerV2 , _players[0].transform.position.y, _players[0].transform.position.z + playerH2);
         //Quaternion lookRotation = Quaternion.LookRotation(LookDirection.normalized);
@@ -199,8 +199,8 @@ public class MovePlayerScript : MonoBehaviour
     {
         int amountOfBoxes = _players[1].GetComponent<PlayerScript>().CurrentBoxes;
         slowingDownSpeed = defaultSlowingDownSpeed + (amountOfBoxes * 2);
-        _players[1].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed));
-        m_Animator[1].SetFloat("Speed", playerV + playerH);
+        _players[1].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
+        m_Animator[1].SetFloat("Speed", Mathf.Abs(playerV + playerH));
 
 
         Vector3 LookDirection = new Vector3(_players[1].transform.position.x + playerV2, _players[1].transform.position.y, _players[1].transform.position.z + playerH2);
@@ -222,8 +222,8 @@ public class MovePlayerScript : MonoBehaviour
     {
         int amountOfBoxes = _players[2].GetComponent<PlayerScript>().CurrentBoxes;
         slowingDownSpeed = defaultSlowingDownSpeed + (amountOfBoxes * 2);
-        _players[2].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed));
-        m_Animator[2].SetFloat("Speed", playerV + playerH);
+        _players[2].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
+        m_Animator[2].SetFloat("Speed", Mathf.Abs(playerV + playerH));
 
 
         Vector3 LookDirection = new Vector3(_players[2].transform.position.x + playerV2, _players[2].transform.position.y, _players[2].transform.position.z + playerH2);
@@ -245,8 +245,8 @@ public class MovePlayerScript : MonoBehaviour
 
         int amountOfBoxes = _players[3].GetComponent<PlayerScript>().CurrentBoxes;
         slowingDownSpeed = defaultSlowingDownSpeed + (amountOfBoxes * 2);
-        _players[3].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed));
-        m_Animator[3].SetFloat("Speed", playerV + playerH);
+        _players[3].transform.Translate(new Vector3(playerH / slowingDownSpeed, 0, -playerV / slowingDownSpeed), Space.World);
+        m_Animator[3].SetFloat("Speed", Mathf.Abs( playerV + playerH));
 
 
         Vector3 LookDirection = new Vector3(_players[3].transform.position.x + playerV2, _players[3].transform.position.y, _players[3].transform.position.z + playerH2);
