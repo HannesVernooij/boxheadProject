@@ -47,6 +47,13 @@ public class EnemySpawnScript : MonoBehaviour
             }
         }
     }
+    public void DisableAllZombies()
+    {
+        foreach(GameObject z in zombies)
+        {
+            z.SetActive(false);
+        }
+    }
     //
     private GameObject GettingTheChildSpawnZombieArea { get { return m_Player.transform.FindChild("ColliderSpawnZombieArea").gameObject; } }
     private GameObject[] ZombieSpawnPointsSet()
