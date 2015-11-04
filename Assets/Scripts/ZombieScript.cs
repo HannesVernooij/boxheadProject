@@ -5,6 +5,7 @@ public class ZombieScript : MonoBehaviour
 {
     private NavMeshAgent m_NMA;
     private GameObject m_TargetPlayer;
+    private Animator m_Animator;
     private int _hp = 10;
     public int HP
     {
@@ -14,15 +15,17 @@ public class ZombieScript : MonoBehaviour
 
     public GameObject SetTargetPlayer { set { m_TargetPlayer = value; } }
 
-    private void Start()
+    private void Awake()
     {
         m_NMA = GetComponent<NavMeshAgent>();
+        m_Animator = GetComponent<Animator>();
+        m_NMA.enabled = false;
     }
     private void OnEnable()
     {
         if (m_NMA != null)
         {
-            m_NMA.enabled = true;
+            StartCoroutine(EnableNavMeshAgent());
             _hp = 10;
         }
     }
@@ -31,9 +34,26 @@ public class ZombieScript : MonoBehaviour
         if (m_NMA != null)
             m_NMA.enabled = false;
     }
+    private IEnumerator EnableNavMeshAgent()
+    {
+        yield return new WaitForSeconds(1f);
+        m_NMA.enabled = true;
+    }
     private void Update()
     {
-        m_NMA.SetDestination(m_TargetPlayer.transform.position);
+        if (m_NMA.enabled == true)
+        {
+            m_NMA.SetDestination(m_TargetPlayer.transform.position);
+            m_Animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            m_Animator.SetBool("IsWalking", false);
+        }
+        if (m_NMA.isOnOffMeshLink == true)
+        {
+            m_NMA.speed = 0.4f;
+        }else { m_NMA.speed = 1f; }
         if (_hp <= 0)
         {
             gameObject.SetActive(false);
