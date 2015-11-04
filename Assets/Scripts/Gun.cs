@@ -16,8 +16,6 @@ public class Gun : MonoBehaviour
     private int _damage = 0;
     public string _tag;
     public int _id;
-    private bool _isReloading;
-    private int _shotgunReloadedShells;
     public SoundSystem _soundScript;
 
     public string WeaponTag
@@ -77,20 +75,10 @@ public class Gun : MonoBehaviour
         if (_remainingDelay >= 0)
         {
             _remainingDelay -= Time.deltaTime;
-            if (_tag == "Shotgun" && _isReloading == true)
-            {
-
-                if (_remainingDelay <= 0.31 * _shotgunReloadedShells)
-                {
-                    _shotgunReloadedShells--;
-                    _soundScript.Reload(_id, _tag);
-                }
-            }
         }
         if (_ammoInClip == 0 && _amountOfFullClips > 0)
         {
-            if (_tag == "Shotgun") _shotgunReloadedShells = 0;
-            else _soundScript.Reload(_id, _tag);
+            _soundScript.Reload(_id, _tag);
             _remainingDelay += _reloadSpeed;
             _ammo--;
             CalculateAmmo();

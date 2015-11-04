@@ -129,8 +129,8 @@ public class MovePlayerScript : MonoBehaviour
                 if (_currentPlayerGuns[i, i2].gameObject.tag == "Shotgun")
                 {
                     _currentPlayerGuns[i, i2].ClipSize = 6;
-                    _currentPlayerGuns[i, i2].ReloadSpeed = 1.86f;
-                    _currentPlayerGuns[i, i2].ShootDelay = 0.5f;
+                    _currentPlayerGuns[i, i2].ReloadSpeed = 0.5f;
+                    _currentPlayerGuns[i, i2].ShootDelay = 0.2f;
                     _currentPlayerGuns[i, i2].Damage = 1;
                     _currentPlayerGuns[i, i2].Ammo(Random.Range(6, 20));
                     _currentPlayerGuns[i, i2]._tag = "Shotgun";
