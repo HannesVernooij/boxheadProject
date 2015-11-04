@@ -9,40 +9,23 @@ public class EnemySpawnScript : MonoBehaviour
     private GameObject[] m_ZombiePrefabs,
                          m_ZombieSpawnPoints;
     [SerializeField]
-    private float m_Timer = 5;
+    private float m_TimerStart = 10,
+                  m_TimerRestart = 12;
 
     public GameObject ZombiesParent { get { return m_ZombiesEmtyGameObjectParent; } set { m_ZombiesEmtyGameObjectParent = value; } }
     public GameObject[] GetZombies { get { return zombies; } }
-    public float Timer { get { return m_Timer; } set { m_Timer = value; } }
+    public float TimerStart { get { return m_TimerStart; } set { m_TimerStart = value; } }
+    public float TimerRestart { get { return m_TimerRestart; } set { m_TimerRestart = value; } }
 
     private EnemySpawnChildScript[] _EnemySpawnChildScript;
     private GameObject m_ZombiesEmtyGameObjectParent;
     private GameObject[] zombies;
-    private int m_ZombieSpawnLimit = 3;
+    private int m_ZombieSpawnLimit = 30;
 
     private void Start()
     {
         m_ZombieSpawnPoints = ZombieSpawnPointsSet();
         CreateZombiesPool();
-    }
-    private void Update()
-    {
-        SpawnZombieWithTimer(m_Timer -= Time.deltaTime);
-    }
-    private void SpawnZombieWithTimer(float timer)
-    {
-        if (m_Timer <= 0)
-        {
-            foreach (EnemySpawnChildScript script in _EnemySpawnChildScript)
-            {
-                if (script.CanSpawnPool == false)   
-                {
-                    script.CanSpawnPool = true;
-                    m_Timer = 5;
-                    return;
-                }
-            }
-        }
     }
     private void OnTriggerEnter(Collider coll)
     {

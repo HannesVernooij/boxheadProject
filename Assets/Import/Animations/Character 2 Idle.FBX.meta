@@ -1,0 +1,235 @@
+fileFormatVersion: 2
+guid: 9fe55584d0486ed4190ceece04d8bb23
+timeCreated: 1446592659
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Body
+    100002: Bone001
+    100004: Bone002
+    100006: Bone003
+    100008: Bone004
+    100010: Bone005
+    100012: Bone006
+    100014: Bone007
+    100016: Bone008
+    100018: //RootNode
+    100020: IK Chain001
+    100022: IK Chain002
+    100024: Left Arm
+    100026: LeftLeg
+    100028: Object001
+    100030: pCube1
+    100032: pCube51
+    100034: pCube52
+    100036: pCube56
+    100038: pCube57
+    100040: pCube69
+    100042: pCube8
+    100044: RightArm
+    100046: RightLeg
+    100048: transform19
+    100050: transform20
+    100052: transform21
+    100054: transform22
+    100056: transform23
+    100058: transform24
+    400000: Body
+    400002: Bone001
+    400004: Bone002
+    400006: Bone003
+    400008: Bone004
+    400010: Bone005
+    400012: Bone006
+    400014: Bone007
+    400016: Bone008
+    400018: //RootNode
+    400020: IK Chain001
+    400022: IK Chain002
+    400024: Left Arm
+    400026: LeftLeg
+    400028: Object001
+    400030: pCube1
+    400032: pCube51
+    400034: pCube52
+    400036: pCube56
+    400038: pCube57
+    400040: pCube69
+    400042: pCube8
+    400044: RightArm
+    400046: RightLeg
+    400048: transform19
+    400050: transform20
+    400052: transform21
+    400054: transform22
+    400056: transform23
+    400058: transform24
+    2300000: Body
+    2300002: Left Arm
+    2300004: Object001
+    2300006: RightArm
+    3300000: Body
+    3300002: Left Arm
+    3300004: Object001
+    3300006: RightArm
+    4300000: Body
+    4300002: RightArm
+    4300004: Left Arm
+    4300006: Object001
+    4300008: RightLeg
+    4300010: LeftLeg
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: LeftLeg
+    13700002: RightLeg
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/Bone001
+        weight: 1
+      - path: Body/Bone001/Bone002
+        weight: 1
+      - path: Body/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Body/Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: Body/Bone005
+        weight: 1
+      - path: Body/Bone005/Bone006
+        weight: 1
+      - path: Body/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Body/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Body/Left Arm
+        weight: 1
+      - path: Body/Object001
+        weight: 1
+      - path: Body/RightArm
+        weight: 1
+      - path: IK Chain001
+        weight: 1
+      - path: IK Chain002
+        weight: 1
+      - path: LeftLeg
+        weight: 1
+      - path: pCube1
+        weight: 1
+      - path: pCube1/transform24
+        weight: 1
+      - path: pCube8
+        weight: 1
+      - path: pCube8/transform23
+        weight: 1
+      - path: pCube51
+        weight: 1
+      - path: pCube51/transform22
+        weight: 1
+      - path: pCube52
+        weight: 1
+      - path: pCube52/transform21
+        weight: 1
+      - path: pCube56
+        weight: 1
+      - path: pCube56/transform20
+        weight: 1
+      - path: pCube57
+        weight: 1
+      - path: pCube57/transform19
+        weight: 1
+      - path: pCube69
+        weight: 1
+      - path: RightLeg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00150000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
