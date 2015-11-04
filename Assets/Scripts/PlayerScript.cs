@@ -51,6 +51,7 @@ public class PlayerScript : MonoBehaviour
         {
             _hp = 10;
             gameObject.transform.position = _startPosition;
+            _movePlayerScript.AddBox(_currentBoxes);
             _currentBoxes = 0;
         }
 
@@ -63,7 +64,7 @@ public class PlayerScript : MonoBehaviour
             else
             {
                 _boxLoadTimer = 0;
-                _currentBoxes++;
+                _currentBoxes += _movePlayerScript.GetBox();
                 _objectiveParticles.enableEmission = true;
             }
         }

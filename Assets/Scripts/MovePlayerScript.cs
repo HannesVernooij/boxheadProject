@@ -35,6 +35,10 @@ public class MovePlayerScript : MonoBehaviour
     int _damage = 0;
     int[] _selectedGunCounter = new int[4] { 0, 0, 0, 0 };
 
+    int _totalAmountOfBoxes = 10;
+    [SerializeField]
+    private ParticleSystem _boxCollectParticles;
+
     public Gun[,] CurrentPlayerGuns
     {
         set { _currentPlayerGuns = value; }
@@ -133,6 +137,7 @@ public class MovePlayerScript : MonoBehaviour
                     _currentPlayerGuns[i, i2].Damage = 1;
                     _currentPlayerGuns[i, i2].Ammo(Random.Range(12, 50));
                     _currentPlayerGuns[i, i2]._tag = "Pistol";
+                    _currentPlayerGuns[i, i2]._id = i;
                     _selectedGun[i] = _currentPlayerGuns[i, i2];
                 }
                 if (_currentPlayerGuns[i, i2].gameObject.tag == "Shotgun")
@@ -143,6 +148,7 @@ public class MovePlayerScript : MonoBehaviour
                     _currentPlayerGuns[i, i2].Damage = 1;
                     _currentPlayerGuns[i, i2].Ammo(Random.Range(6, 20));
                     _currentPlayerGuns[i, i2]._tag = "Shotgun";
+                    _currentPlayerGuns[i, i2]._id = i;
                 }
                 if (_currentPlayerGuns[i, i2].gameObject.tag == "Smg")
                 {
@@ -152,6 +158,7 @@ public class MovePlayerScript : MonoBehaviour
                     _currentPlayerGuns[i, i2].Damage = 2;
                     _currentPlayerGuns[i, i2].Ammo(Random.Range(30, 90));
                     _currentPlayerGuns[i, i2]._tag = "Smg";
+                    _currentPlayerGuns[i, i2]._id = i;
                 }
                 if (_currentPlayerGuns[i, i2].gameObject.tag == "Sniper")
                 {
@@ -161,6 +168,7 @@ public class MovePlayerScript : MonoBehaviour
                     _currentPlayerGuns[i, i2].Damage = 9;
                     _currentPlayerGuns[i, i2].Ammo(Random.Range(6, 20));
                     _currentPlayerGuns[i, i2]._tag = "Sniper";
+                    _currentPlayerGuns[i, i2]._id = i;
                 }
             }
         }
@@ -280,5 +288,21 @@ public class MovePlayerScript : MonoBehaviour
             _currentPlayerGuns[i, 2].GetComponent<Renderer>().material.color = Color.blue;
             _currentPlayerGuns[i, 3].GetComponent<Renderer>().material.color = Color.yellow;
         }
+    }
+
+    public int GetBox()
+    {
+        if (_totalAmountOfBoxes > 0) return 1;
+        else
+        {
+            _boxCollectParticles.enableEmission = false;
+            return 0;
+        }
+    }
+
+    public void AddBox(int value)
+    {
+        _totalAmountOfBoxes += value;
+        _boxCollectParticles.enableEmission = false;
     }
 }

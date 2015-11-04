@@ -21,6 +21,10 @@ public class SoundSystem : MonoBehaviour
             m_AudioSource[i] = m_Locations[i].AddComponent<AudioSource>();
         }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     public void Shoot(int player, string weaponTag)
     {
         switch (weaponTag)
@@ -31,7 +35,11 @@ public class SoundSystem : MonoBehaviour
             case "Shotgun":
                 ShootShotgun(player);
                 break;
+<<<<<<< HEAD
             case "smg":
+=======
+            case "Smg":
+>>>>>>> origin/master
                 ShootAK(player);
                 break;
             case "Sniper":
